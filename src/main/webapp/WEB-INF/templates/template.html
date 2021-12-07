@@ -1,18 +1,26 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {font-family: Arial, Helvetica, sans-serif;}
 
+        ul {
+            /*The ul defines the margin and padding for this website.*/
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
         .navbar {
+            /*The navbar defines the width and color of the navigation bar*/
             width: 100%;
             background-color: #555;
             overflow: hidden;
         }
 
         .navbar a {
+            /*This makes the position, color, and the size of the navigation bar*/
             float: left;
             padding: 14px 16px;
             color: white;
@@ -22,23 +30,37 @@
         }
 
         .navbar a:hover {
+            /*This shows a green color when the hover is on the navigation bar*/
             background-color: #04AA6D;
         }
 
         .active {
+            /*This shows which page you are on*/
             background-color: #04AA6D;
         }
 
         .navbar-right {
+            /*This gives the possibility to get the the navibar block to the right*/
             float: right;
             text-align: center;
         }
 
         .navbar-logo {
+            /*This makes the logo show on the navigation bar*/
             width: 200px;
             height: 50px;
             overflow: hidden;
             float: left;
+        }
+
+        .footer {
+            /*The gives the position, color and size for the footer.*/
+            color: Black;
+            text-align: center;
+            width: 100%;
+            font-size: 12px;
+            position: fixed;
+            bottom: 0;
         }
 
     </style>
@@ -55,5 +77,6 @@
 
     </div>
 </ul>
+<h1 class = "footer", th:text="#{copyright.msg}"></h1>
 </body>
 </html>
