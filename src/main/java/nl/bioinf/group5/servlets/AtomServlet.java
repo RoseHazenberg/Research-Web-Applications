@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
 
-@WebServlet(name = "AtomServlet", urlPatterns = "/atom", loadOnStartup = 1)
+@WebServlet(name = "AtomServlet", urlPatterns = {"/atom"}, loadOnStartup = 1)
 public class AtomServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
