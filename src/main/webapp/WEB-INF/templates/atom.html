@@ -35,9 +35,9 @@ Here is :
 
 <script type="text/javascript">
     jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
-    Jmol.script(jmolApplet0,"background black; load 7kx4.pdb; wireframe only; spin on")
+    Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin on")
 </script>
-<b>Model:</b>
+<!-- <b>Model:</b>
 <label>
     <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
                'wireframe only; ');" checked="checked">
@@ -49,16 +49,16 @@ Here is :
 <label>
     <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
                'backbone only; ');">
-</label>Backbone</br>
+</label>Backbone</br> -->
 
 <b>Spin:</b>
 <label>
     <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'spin off; ');" checked="checked">
+               'spin off; ');">
 </label>Off
 <label>
     <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'spin on; ');">
+               'spin on; ');" checked="checked">
 </label>On</br>
 
 <b>Color:</b>
@@ -110,11 +110,11 @@ Here is :
 <b>Background:</b>
 <label>
     <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background black; ');" checked="checked">
+               'background black; ');">
 </label>Black
 <label>
     <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background white; ');">
+               'background white; ');" checked="checked">
 </label>White
 <label>
     <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
