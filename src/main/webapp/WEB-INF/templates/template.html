@@ -1,42 +1,38 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-        body {font-family: Arial, Helvetica, sans-serif;}
+        body {margin: 0;font-family: Arial, Helvetica, sans-serif;}
 
-        ul {
-            /*The ul defines the margin and padding for this website.*/
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
         .navbar {
             /*The navbar defines the width and color of the navigation bar*/
             width: 100%;
-            background-color: #555;
-            overflow: hidden;
+            background-color: #669999;
+            overflow: auto;
+            position: absolute;
         }
 
         .navbar a {
             /*This makes the position, color, and the size of the navigation bar*/
             float: left;
-            padding: 14px 16px;
+            padding: 20px 26px;
+            display: inline-block;
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            font-size: 30px;
             text-align: center;
         }
 
         .navbar a:hover {
             /*This shows a green color when the hover is on the navigation bar*/
-            background-color: #04AA6D;
+            background-color: #ff9933;
         }
 
         .active {
             /*This shows which page you are on*/
-            background-color: #04AA6D;
+            background-color: #669999;
         }
 
         .navbar-right {
@@ -47,8 +43,8 @@
 
         .navbar-logo {
             /*This makes the logo show on the navigation bar*/
-            width: 200px;
-            height: 50px;
+            width: 225px;
+            height: 60px;
             overflow: hidden;
             float: left;
         }
@@ -62,23 +58,25 @@
             position: fixed;
             bottom: 0;
         }
-
     </style>
+
 </head>
 <body>
-<ul>
     <div class="navbar">
-        <img class="navbar-logo", src="hanze-logo.png">
-        <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-        <a href="#"><i class="fa fa-fw fa-file"></i> Input</a>
+        <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science--technology/opleidingen/bachelor/bio-informatica}">
+            <img class="navbar-logo", th:src="@{/images/hanze-logo.png}" alt="Hanze logo"></a>
+        <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="atom.html"><i class="fa fa-fw fa-file"></i> Input</a>
         <div class="navbar-right">
             <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-            <a href="https://github.com/RoseHazenberg/Research-Web-Applications">
+            <a href="#"><i class="fa fa-fw fa-globe"></i> Translate </a>
+            <!-- <a href="index.php?language=en">
+                <a href="index.php?language=no"> -->
+            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}">
                 <i class="fa fa-fw fa-github"></i></a>
         </div>
-
     </div>
-</ul>
-<h1 class = "footer", th:text="#{copyright.msg}"></h1>
+
+<h1 class = "footer" th:text="#{copyright.msg}"></h1>
 </body>
 </html>
