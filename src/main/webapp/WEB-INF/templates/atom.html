@@ -1,55 +1,25 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<!-- <head>
-    <title>JSmol</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 
-    <script src="/jmol-14.32.1/jsmol/JSmol.min.js"> </script>
-    <script src="/jmol-14.32.1/jsmol/js/Jmol2.js"> </script>
-    <script> jmolInitialize("/jmol-14.32.1/jsmol"); </script>
+<div th:insert="/template.html"></div>
+<link rel="stylesheet" th:href="@{css/stylesheet.css}">
 
-</head>
-<body>
-Here is :
-<script>
-    jmolApplet(400,"load 7kx4.pdb", "0");
-</script>
-
-</body>
-</html> -->
-
-<head>
-    <div th:insert="/template.html"></div>
+<<head>
     <script type="text/javascript" src="../../jmol-14.32.1/jsmol/JSmol.min.js"></script>
 
     <script type="text/javascript">
         var Info = {
-            width: 500,
-            height: 500,
+            width: 1000,
+            height: 1000,
             j2sPath: "../../jmol-14.32.1/jsmol/j2s",
         }
     </script>
-    <title th:text="#{tab.title}">_page_title_</title>
 </head>
-<h1 th:text="#{page.title}">_page_title_</h1>
 
 <script type="text/javascript">
     jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
     Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin on")
 </script>
-<!-- <b>Model:</b>
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'wireframe only; ');" checked="checked">
-</label>Wireframe</html>
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'cartoon only; ');">
-</label>Cartoon
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'backbone only; ');">
-</label>Backbone</br> -->
 
 <b>Spin:</b>
 <label>
@@ -140,3 +110,4 @@ Here is :
     <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
                'background magenta; ');">
 </label>Magenta</br>
+</html>
