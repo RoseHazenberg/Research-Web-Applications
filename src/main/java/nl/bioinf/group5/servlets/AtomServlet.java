@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Date;
 
-@WebServlet(name = "AtomServlet", urlPatterns = {"/atom"}, loadOnStartup = 1)
+@WebServlet(name = "AtomServlet", urlPatterns = {"/atom", "/atom.html"}, loadOnStartup = 1)
 public class AtomServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
@@ -34,7 +33,6 @@ public class AtomServlet extends HttpServlet {
                 response,
                 request.getServletContext(),
                 request.getLocale());
-        ctx.setVariable("currentDate", new Date());
         WebConfig.createTemplateEngine(getServletContext()).
                 process("atom", ctx, response.getWriter());
     }
