@@ -2,24 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{css/stylesheet.css}">
+    <title th:text="#{tab.title}">_tab_title_</title>
 </head>
+
 <body>
     <div class="navbar">
         <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science--technology/opleidingen/bachelor/bio-informatica}">
             <img class="navbar-logo", th:src="@{/images/hanze-logo.png}" alt="Hanze logo"></a>
-        <a href="home"><i class="fa fa-fw fa-home"></i> Home</a>
-        <a href="atom"><i class="fa fa-fw fa-file"></i> Input</a>
+        <a th:href="@{home}"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a th:href="@{atom}"><i class="fa fa-fw fa-file"></i> Input</a>
         <div class="navbar-right">
-            <a href="#"><i class="fa fa-fw fa-envelope"> Contact</i></a>
+            <a th:href="@{contact}"><i class="fa fa-fw fa-envelope"></i> Contact</a>
             <a href="#"><i class="fa fa-fw fa-globe"></i> Translate</a>
-            <!-- <a href="index.php?language=en">
-                <a href="index.php?language=no"> -->
             <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}">
                 <i class="fa fa-fw fa-github"></i></a>
         </div>
     </div>
+    <header class="title-container title-theme title-padding" id="myHeader">
+        <div class="title-center">
+            <div class="gap-60"></div>
+            <h1 class="title-large title-animate-bottom" th:text="#{page.title}">_page_title_</h1>
+        </div>
+    </header>
 
 <h1 class = "footer" th:text="#{copyright.msg}"></h1>
 </body>
