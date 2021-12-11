@@ -2,16 +2,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 
 <div th:insert="/template.html"></div>
-<link rel="stylesheet" th:href="@{css/stylesheet.css}">
 
-<<head>
-    <script type="text/javascript" src="../../jmol-14.32.1/jsmol/JSmol.min.js"></script>
+<head>
+
+    <link rel="stylesheet" th:href="@{css/stylesheet.css}">
+
+    <script type="text/javascript" src="../jmol-14.32.1/jsmol/JSmol.min.js"></script>
 
     <script type="text/javascript">
         var Info = {
             width: 1000,
             height: 1000,
-            j2sPath: "../../jmol-14.32.1/jsmol/j2s",
+            j2sPath: "../jmol-14.32.1/jsmol/j2s",
         }
     </script>
 </head>
