@@ -7,20 +7,21 @@
 
     <link rel="stylesheet" th:href="@{css/stylesheet.css}">
 
-    <script type="text/javascript" src="../jmol-14.32.1/jsmol/JSmol.min.js"></script>
+<!--    <script type="text/javascript" src="/jmol-14.32.1/jsmol/JSmol.min.js"></script>-->
+    <script type="text/javascript" th:src="@{/jmol-14.32.1/jsmol/JSmol.min.js}"></script>
 
     <script type="text/javascript">
         var Info = {
             width: 1000,
             height: 1000,
-            j2sPath: "../jmol-14.32.1/jsmol/j2s",
+            j2sPath: "/jmol-14.32.1/jsmol/j2s",
         }
     </script>
 </head>
 
 <script type="text/javascript">
     jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
-    Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin on")
+    Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin off")
 </script>
 
 <b>Spin:</b>
