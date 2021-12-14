@@ -1,10 +1,57 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 
-</head>
+<head>
 <div th:insert="/template.html"></div>
+<link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+</head>
+
 <body>
+<div class="container-content">
+    <div class="row-content">
+        <div class="column-66">
+            <h1 class="xlarge-font"><b>Leap Motion</b></h1>
+            <h1 class="large-font" style="color:MediumSeaGreen;"><b>What is it?</b></h1>
+            <p><span style="font-size:24px">Make movements with your hands.</span> <br> </p>
+            <button class="button">Download Application</button>
+            <button class="button">Read More</button>
+        </div>
+        <div class="column-33">
+            <img src="/images/motion-leap.png" width="335" height="471">
+        </div>
+    </div>
+</div>
+
+<!-- Clarity Section -->
+<div class="container-content" style="background-color:#f1f1f1">
+    <div class="row-content">
+        <div class="column-33">
+            <img src="/images/JSmol-logo.png" alt="JSmol" width="335" height="471">
+        </div>
+        <div class="column-66">
+            <h1 class="xlarge-font"><b>JSmol</b></h1>
+            <h1 class="large-font" style="color:red;"><b>What is it?</b></h1>
+            <p><span style="font-size:24px">Create a molecule that moves.</span> <br> Hello </p>
+            <button class="button" style="background-color:red">Download Application</button>
+            <button class="button" style="background-color:red">Read More</button>
+        </div>
+    </div>
+</div>
+
+<!-- The App Section -->
+<div class="container-content">
+    <div class="row-content">
+        <div class="column-66">
+            <h1 class="xlarge-font"><b>About ??</b></h1>
+            <h1 class="large-font" style="color:MediumSeaGreen;"><b>What is it?</b></h1>
+            <p><span style="font-size:24px">Create a molecule that moves.</span> <br> OK </p>
+<!--            <button class="button">Download Application</button>-->
+        </div>
+        <div class="column-33">
+            <img src="/images/hanze-logo.png" width="335" height="471" >
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
