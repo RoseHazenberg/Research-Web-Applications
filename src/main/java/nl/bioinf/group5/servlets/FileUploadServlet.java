@@ -46,30 +46,17 @@ public class FileUploadServlet extends HttpServlet {
             part.write(this.uploadDir + File.separator + fileName);
         }
 
-        //the safe way, with a generated file name becomes something like this
-        //my_app_upload14260971264207930189.csv
-        File generatedFile = File.createTempFile("molecule", ".csv");
+        //This generates a file name something like this
+        //molecule14260971264207930189.pdb
+        File generatedFile = File.createTempFile("molecule", ".pdb");
         for (Part part : request.getParts()) {
             part.write(this.uploadDir + File.separator + generatedFile.getName());
         }
 
         //go back to the upload form
         WebContext ctx = new WebContext(request, response, request.getServletContext(), request.getLocale());
-        ctx.setVariable("message", "upload successfull, wanna do another on?");
         WebConfig.createTemplateEngine(getServletContext()).
                 process("input", ctx, response.getWriter());
     }
 
-    public void process(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-        //this step is optional; standard settings also suffice
-        WebConfig.configureResponse(response);
-        WebContext ctx = new WebContext(
-                request,
-                response,
-                request.getServletContext(),
-                request.getLocale());
-        WebConfig.createTemplateEngine(getServletContext()).
-                process("input", ctx, response.getWriter());
-    }
 }
