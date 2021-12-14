@@ -5,7 +5,6 @@ import org.thymeleaf.context.WebContext;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,10 +13,7 @@ import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
 
-@MultipartConfig(location="/tmp",
-        fileSizeThreshold = 1024 * 1024,
-        maxFileSize = 1024 * 1024 * 5,
-        maxRequestSize = 1024 * 1024 * 5 * 5)
+
 @WebServlet(name = "FileUploadServlet", urlPatterns = {"/input", "/data_upload"})
 public class FileUploadServlet extends HttpServlet {
     private String uploadDir;
