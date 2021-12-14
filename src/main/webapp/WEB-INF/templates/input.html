@@ -1,0 +1,14 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{css/stylesheet.css}">
+    <div th:insert="/template.html"></div>
+</head>
+<body>
+<h1 th:text="#{input.msg}"></h1>
+<form th:action="@{'atom'}" method="post" enctype="multipart/form-data">
+    <input type="file" name="pdb_data" accept="text/pdb">
+    <input type="submit" value="Upload"/>
+</form>
+</body>
+</html>
