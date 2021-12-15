@@ -4,25 +4,38 @@
 <div th:insert="/template.html"></div>
 
 <head>
-
     <link rel="stylesheet" th:href="@{css/stylesheet.css}">
 
 <!--    <script type="text/javascript" src="/jmol-14.32.1/jsmol/JSmol.min.js"></script>-->
     <script type="text/javascript" th:src="@{/jmol-14.32.1/jsmol/JSmol.min.js}"></script>
-
-    <script type="text/javascript">
+    <script>
         var Info = {
-            width: 1000,
-            height: 1000,
-            j2sPath: "/jmol-14.32.1/jsmol/j2s",
-        }
+        color: "#FFFFFF",
+        height: 1000,
+        width: 1000,
+        script: "load " + "7kx4.pdb",
+        j2sPath: "/jmol-14.32.1/jsmol/j2s",
+        serverURL: "/jmol-14.32.1/jsmol/php/jsmol.php",
+        };
+
+        jmolApplet0 = Jmol.getApplet("myJmol", Info);
+        Jmol.script(jmolApplet0, "background white; spin on")
     </script>
+<!--    <script type="text/javascript">-->
+<!--        var Info = {-->
+<!--            width: 1000,-->
+<!--            height: 1000,-->
+<!--            j2sPath: "/jmol-14.32.1/jsmol/j2s",-->
+<!--        }-->
+<!--    </script>-->
 </head>
 
-<script type="text/javascript">
-    jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);
-    Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin off")
-</script>
+<!--<script type="text/javascript">-->
+<!--    Jmol.getApplet("myJmol")-->
+<!--    Jmol.getApplet("myJmol", Info)-->
+<!--    // jmolApplet0 = Jmol.getApplet("jmolApplet0", Info);-->
+<!--    // Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin off")-->
+<!--</script>-->
 
 <b>Spin:</b>
 <label>
@@ -32,7 +45,7 @@
 <label>
     <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
                'spin on; ');" checked="checked">
-</label>On</br>
+</label>On<br/>
 
 <b>Color:</b>
 <label>
@@ -78,7 +91,7 @@
 <label>
     <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
                'color grey; ');">
-</label>Grey</br>
+</label>Grey<br/>
 
 <b>Background:</b>
 <label>
@@ -112,5 +125,5 @@
 <label>
     <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
                'background magenta; ');">
-</label>Magenta</br>
+</label>Magenta<br/>
 </html>
