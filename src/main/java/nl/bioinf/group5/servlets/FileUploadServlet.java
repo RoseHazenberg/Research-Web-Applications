@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 @WebServlet(name = "FileUploadServlet", urlPatterns = {"/input", "/data_upload"})
 public class FileUploadServlet extends HttpServlet {
-    private String uploadDir;
     @Override
     public void init() throws ServletException {
-        this.uploadDir = getInitParameter("upload_dir");
         final ServletContext servletContext = this.getServletContext();
         WebConfig.createTemplateEngine(servletContext);
     }
@@ -35,24 +35,25 @@ public class FileUploadServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        File fileSaveDir = new File(this.uploadDir);
+        String outputFolder = getServletContext().getInitParameter("output");
+        Files.createDirectories(Paths.get(outputFolder));
+
         String fileName;
         for (Part part : request.getParts()) {
             fileName = part.getSubmittedFileName();
-            part.write(this.uploadDir + File.separator + fileName);
+            part.write(outputFolder + File.separator + fileName);
         }
 
         //This generates a file name something like this
         //molecule14260971264207930189.pdb
         File generatedFile = File.createTempFile("molecule", ".pdb");
         for (Part part : request.getParts()) {
-            part.write(this.uploadDir + File.separator + generatedFile.getName());
+            part.write(outputFolder + File.separator + generatedFile.getName());
         }
 
-        //go back to the upload form
         WebContext ctx = new WebContext(request, response, request.getServletContext(), request.getLocale());
         WebConfig.createTemplateEngine(getServletContext()).
-                process("input", ctx, response.getWriter());
+                process("atom", ctx, response.getWriter());
     }
 
 }
