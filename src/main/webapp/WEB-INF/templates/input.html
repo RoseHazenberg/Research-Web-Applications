@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1 th:text="#{input.msg}"></h1>
-<form th:action="@{'atom'}" method="post" enctype="multipart/form-data">
+<form th:action="@{data_upload}" method="post" enctype="multipart/form-data">
     <input type="file" name="pdb_data" accept="text/pdb">
     <input type="submit" value="Upload"/>
 </form>
