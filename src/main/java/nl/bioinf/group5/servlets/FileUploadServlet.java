@@ -35,13 +35,11 @@ public class FileUploadServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String outputFolder = getServletContext().getInitParameter("output");
+        String outputFolder = getInitParameter("upload");
         Files.createDirectories(Paths.get(outputFolder));
-
-        String fileName;
-        for (Part part : request.getParts()) {
-            fileName = part.getSubmittedFileName();
-            part.write(outputFolder + File.separator + fileName);
+        File fileSaveDir = new File(outputFolder);
+        if (! fileSaveDir.exists()) {
+            throw new IllegalStateException("Upload dir does not exist: " + outputFolder);
         }
 
         //This generates a file name something like this
@@ -51,9 +49,6 @@ public class FileUploadServlet extends HttpServlet {
             part.write(outputFolder + File.separator + generatedFile.getName());
         }
 
-        WebContext ctx = new WebContext(request, response, request.getServletContext(), request.getLocale());
-        WebConfig.createTemplateEngine(getServletContext()).
-                process("atom", ctx, response.getWriter());
     }
 
 }
