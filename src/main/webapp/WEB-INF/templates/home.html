@@ -1,9 +1,42 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 <div th:insert="/template.html"></div>
 <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+<!--    <style>-->
+<!--        .footer {-->
+<!--            background: Black;-->
+<!--            color: white;-->
+<!--            height: 200px;-->
+<!--            position: relative;-->
+<!--            bottom: 0;-->
+<!--        }-->
+
+<!--        .footer-bottom {-->
+<!--            background: Black;-->
+<!--            color: white;-->
+<!--            height: 50px;-->
+<!--            width: 100%;-->
+<!--            text-align: center;-->
+<!--            position: absolute;-->
+<!--            bottom: 0;-->
+<!--            left: 0;-->
+<!--            border: 1px solid #ff9933;-->
+<!--        }-->
+
+<!--        .footer-content {-->
+<!--            border: 1px solid #ff9933;-->
+<!--            height: 175px;-->
+<!--            display: flex;-->
+<!--        }-->
+
+<!--        .footer-section {-->
+<!--            flex: 1;-->
+<!--            padding: 25px;-->
+<!--            border: 1px solid #ff9933;-->
+<!--        }-->
+<!--    </style>-->
 </head>
 
 <body>
@@ -53,5 +86,36 @@
     </div>
 </div>
 
+<div class="footer">
+    <div class="footer-content">
+
+        <div class="footer-section about">
+            <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+            <p>
+                Molecular interaction
+            </p>
+            <a><i class="fa fa-fw fa-phone"></i> Phone</a><br/>
+            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}">
+                <i class="fa fa-fw fa-github"></i></a>
+        </div>
+        <div class="footer-section links">
+            <h4> Quick links</h4>
+            <ul>
+                <a href="input"><li>Input</li></a>
+            </ul>
+        </div>
+        <div class="footer-section contact-form">
+            <span>
+            <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science--technology/opleidingen/bachelor/bio-informatica}">
+                <img class="navbar-logo" th:src="@{/images/hanze-logo.png}" alt="Hanze logo" height="5px" width="5px"></a>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p th:text="#{copyright.msg}"></p>
+    </div>
+</div>
 </body>
 </html>
