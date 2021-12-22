@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
-    <link rel="stylesheet" th:href="@{css/stylesheet.css}">
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
     <title th:text="#{tab.title}">_tab_title_</title>
 </head>
 
@@ -13,6 +13,7 @@
             <img class="navbar-logo" th:src="@{/images/hanze-logo.png}" alt="Hanze logo"></a>
         <a th:href="@{home}"><i class="fa fa-fw fa-home"></i> Home</a>
         <a th:href="@{input}"><i class="fa fa-fw fa-file"></i> Input</a>
+        <a th:href="@{examples}"><i class="fa fa-fw fa-file"></i> Examples</a>
         <div class="navbar-right">
             <a th:href="@{contact}"><i class="fa fa-fw fa-envelope"></i> Contact</a>
             <a href="#"><i class="fa fa-fw fa-globe"></i> Translate</a>
@@ -27,6 +28,5 @@
         </div>
     </header>
 
-<h1 class = "footer" th:text="#{copyright.msg}"></h1>
 </body>
 </html>
