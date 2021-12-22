@@ -4,7 +4,19 @@
 <div th:insert="/template.html"></div>
 
 <head>
-    <link rel="stylesheet" th:href="@{css/stylesheet.css}">
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+    <script src="/jmol-14.32.1/jsmol/JSmol.min.js"> </script>
+    <script src="/jmol-14.32.1/jsmol/js/Jmol2.js"> </script>
+    <script> jmolInitialize("/jmol-14.32.1/jsmol"); </script>
+</head>
+<body>
+Here is :
+<script>
+    jmolApplet(400,"load /output", "0");
+</script>
+</body>
+</html>
+
 <!--    <script>-->
 <!--        var get_data = function() {-->
 <!--            $.when(-->
@@ -19,28 +31,28 @@
 <!--    </script>-->
 
 <!--    <script type="text/javascript" src="/jmol-14.32.1/jsmol/JSmol.min.js"></script>-->
-    <script type="text/javascript" th:src="@{/jmol-14.32.1/jsmol/JSmol.min.js}"></script>
-    <script>
-        var get_data = function() {
-            $.when(
-                $.getJSON("/output", function (data) {
-                    outFile = data;
-                })
-            ).then(function () {
-                var Info = {
-                    color: "#FFFFFF",
-                    height: 1000,
-                    width: 1000,
-                    script: "load " + outFile,
-                    j2sPath: "/jmol-14.32.1/jsmol/j2s",
-                    serverURL: "/jmol-14.32.1/jsmol/php/jsmol.php",
-                    };
-                jmolApplet0 = Jmol.getApplet("myJmol", Info);
-                Jmol.script(jmolApplet0, "background white; spin on")
-                });
-        };
+<!--    <script type="text/javascript" th:src="@{/jmol-14.32.1/jsmol/JSmol.min.js}"></script>-->
+<!--    <script>-->
+<!--        var get_data = function() {-->
+<!--            $.when(-->
+<!--                $.getJSON("/output", function (data) {-->
+<!--                    outFile = data;-->
+<!--                })-->
+<!--            ).then(function () {-->
+<!--                var Info = {-->
+<!--                    color: "#FFFFFF",-->
+<!--                    height: 1000,-->
+<!--                    width: 1000,-->
+<!--                    script: "load " + outFile,-->
+<!--                    j2sPath: "/jmol-14.32.1/jsmol/j2s",-->
+<!--                    serverURL: "/jmol-14.32.1/jsmol/php/jsmol.php",-->
+<!--                    };-->
+<!--                jmolApplet0 = Jmol.getApplet("myJmol", Info);-->
+<!--                Jmol.script(jmolApplet0, "background white; spin on")-->
+<!--                });-->
+<!--        };-->
 
-    </script>
+<!--    </script>-->
 <!--    <script type="text/javascript">-->
 <!--        var Info = {-->
 <!--            width: 1000,-->
@@ -51,7 +63,7 @@
 
 
 
-</head>
+<!--</head>-->
 
 
 <!--<script type="text/javascript">-->
@@ -61,93 +73,93 @@
 <!--    // Jmol.script(jmolApplet0,"background white; load 7kx4.pdb; wireframe only; spin off")-->
 <!--</script>-->
 
-<b>Spin:</b>
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'spin off; ');">
-</label>Off
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'spin on; ');" checked="checked">
-</label>On<br/>
+<!--<b>Spin:</b>-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'spin off; ');">-->
+<!--</label>Off-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'spin on; ');" checked="checked">-->
+<!--</label>On<br/>-->
 
-<b>Color:</b>
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color cpk; ');" checked="checked">
-</label>Atom
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color structure; ');">
-</label>Secondary
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color chain; ');">
-</label>Chain
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color amino; ');">
-</label>Residue
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color group; ');">
-</label>Group
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color monomer; ');">
-</label>Monomer
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color relativeTemperature; ');">
-</label>Relative temp.
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color fixedTemperature; ');">
-</label>Fixed temp.
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color black; ');">
-</label>Black
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color white; ');">
-</label>White
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'color grey; ');">
-</label>Grey<br/>
+<!--<b>Color:</b>-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color cpk; ');" checked="checked">-->
+<!--</label>Atom-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color structure; ');">-->
+<!--</label>Secondary-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color chain; ');">-->
+<!--</label>Chain-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color amino; ');">-->
+<!--</label>Residue-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color group; ');">-->
+<!--</label>Group-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color monomer; ');">-->
+<!--</label>Monomer-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color relativeTemperature; ');">-->
+<!--</label>Relative temp.-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color fixedTemperature; ');">-->
+<!--</label>Fixed temp.-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color black; ');">-->
+<!--</label>Black-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color white; ');">-->
+<!--</label>White-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'color grey; ');">-->
+<!--</label>Grey<br/>-->
 
-<b>Background:</b>
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background black; ');">
-</label>Black
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background white; ');" checked="checked">
-</label>White
-<label>
-    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,
-               'background red; ');">
-</label>Red
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background green; ');">
-</label>Green
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background blue; ');">
-</label>Blue
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background yellow; ');">
-</label>Yellow
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background cyan; ');">
-</label>Cyan
-<label>
-    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,
-               'background magenta; ');">
-</label>Magenta<br/>
-</html>
+<!--<b>Background:</b>-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background black; ');">-->
+<!--</label>Black-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background white; ');" checked="checked">-->
+<!--</label>White-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick=" Jmol.script(jmolApplet0,-->
+<!--               'background red; ');">-->
+<!--</label>Red-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background green; ');">-->
+<!--</label>Green-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background blue; ');">-->
+<!--</label>Blue-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background yellow; ');">-->
+<!--</label>Yellow-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background cyan; ');">-->
+<!--</label>Cyan-->
+<!--<label>-->
+<!--    <input name="vis" type="radio" onclick="Jmol.script(jmolApplet0,-->
+<!--               'background magenta; ');">-->
+<!--</label>Magenta<br/>-->
+<!--</html>-->
