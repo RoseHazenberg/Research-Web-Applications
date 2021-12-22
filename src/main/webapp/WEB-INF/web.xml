@@ -5,8 +5,8 @@
          version="4.0">
 
     <context-param>
-        <param-name>output</param-name>
-        <param-value>C:/Users/path/tmp/upload</param-value>
+        <param-name>upload</param-name>
+        <param-value>C:/Users/nakas/tmp/upload/</param-value>
     </context-param>
 
     <servlet-mapping>
@@ -20,10 +20,10 @@
         <servlet-class>nl.bioinf.group5.servlets.FileUploadServlet</servlet-class>
         <init-param>
             <param-name>upload</param-name>
-            <param-value>C:/Users/path/tmp/upload</param-value>
+            <param-value>C:/Users/nakas/tmp/upload/</param-value>
         </init-param>
         <multipart-config>
-            <location>C:/Users/path/tmp/tmp</location>
+            <location>C:/Users/nakas/tmp/tmp</location>
             <!-- all in bytes -->
             <max-file-size>20848820</max-file-size>
             <max-request-size>418018841</max-request-size>
