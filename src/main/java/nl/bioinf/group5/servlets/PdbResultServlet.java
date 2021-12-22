@@ -1,10 +1,8 @@
 package nl.bioinf.group5.servlets;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,16 +14,17 @@ public class PdbResultServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException {
-
-        response.setContentType("text/plain");
-        response.setHeader("Content-disposition", "attachment; filename=7kx4.pdb");
+            throws IOException, ServletException {
 
         HttpSession session = request.getSession(false);
         String sessionid = session.getId();
 
-        String outputFolder = getServletContext().getInitParameter("output");
+        String outputFolder = getServletContext().getInitParameter("upload");
         String outFile = outputFolder + sessionid + ".pdb";
+
+        response.setContentType("text/plain");
+        response.setHeader("Content-disposition", "attachment; filename=" + outFile);
+
 
         /* Read in the file and write to the OutputStream of the response */
         try (InputStream in = new FileInputStream(outFile);
