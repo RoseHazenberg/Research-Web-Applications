@@ -6,10 +6,7 @@ import org.thymeleaf.context.WebContext;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -42,11 +39,13 @@ public class FileUploadServlet extends HttpServlet {
             throw new IllegalStateException("Upload dir does not exist: " + outputFolder);
         }
 
+        HttpSession session = request.getSession(true);
+        String sessionid = session.getId();
+
         //This generates a file name something like this
-        //molecule14260971264207930189.pdb
-        File generatedFile = File.createTempFile("molecule", ".pdb");
+        //14260971264207930189.pdb
         for (Part part : request.getParts()) {
-            part.write(outputFolder + File.separator + generatedFile.getName());
+            part.write(outputFolder + sessionid + ".pdb");
         }
 
     }
