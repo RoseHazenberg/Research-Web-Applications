@@ -47,7 +47,14 @@ public class FileUploadServlet extends HttpServlet {
         for (Part part : request.getParts()) {
             part.write(outputFolder + sessionid + ".pdb");
         }
-
+        WebConfig.configureResponse(response);
+        WebContext ctx = new WebContext(
+                request,
+                response,
+                request.getServletContext(),
+                request.getLocale());
+        WebConfig.createTemplateEngine(getServletContext()).
+                process("atom", ctx, response.getWriter());
     }
 
 }
