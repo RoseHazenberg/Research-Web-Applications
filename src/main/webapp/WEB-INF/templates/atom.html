@@ -5,21 +5,41 @@
 
 <head>
     <link rel="stylesheet" th:href="@{css/stylesheet.css}">
+<!--    <script>-->
+<!--        var get_data = function() {-->
+<!--            $.when(-->
+<!--                // Request data for any running benchmark-->
+<!--                $.getJSON("/output", function (data) {-->
+<!--                    outFile = data;-->
+<!--                })-->
+<!--            ).then(function () {-->
+
+<!--            });-->
+<!--        };-->
+<!--    </script>-->
 
 <!--    <script type="text/javascript" src="/jmol-14.32.1/jsmol/JSmol.min.js"></script>-->
     <script type="text/javascript" th:src="@{/jmol-14.32.1/jsmol/JSmol.min.js}"></script>
     <script>
-        var Info = {
-        color: "#FFFFFF",
-        height: 1000,
-        width: 1000,
-        script: "load " + "7kx4.pdb",
-        j2sPath: "/jmol-14.32.1/jsmol/j2s",
-        serverURL: "/jmol-14.32.1/jsmol/php/jsmol.php",
+        var get_data = function() {
+            $.when(
+                $.getJSON("/output", function (data) {
+                    outFile = data;
+                })
+            ).then(function () {
+                var Info = {
+                    color: "#FFFFFF",
+                    height: 1000,
+                    width: 1000,
+                    script: "load " + outFile,
+                    j2sPath: "/jmol-14.32.1/jsmol/j2s",
+                    serverURL: "/jmol-14.32.1/jsmol/php/jsmol.php",
+                    };
+                jmolApplet0 = Jmol.getApplet("myJmol", Info);
+                Jmol.script(jmolApplet0, "background white; spin on")
+                });
         };
 
-        jmolApplet0 = Jmol.getApplet("myJmol", Info);
-        Jmol.script(jmolApplet0, "background white; spin on")
     </script>
 <!--    <script type="text/javascript">-->
 <!--        var Info = {-->
@@ -28,7 +48,11 @@
 <!--            j2sPath: "/jmol-14.32.1/jsmol/j2s",-->
 <!--        }-->
 <!--    </script>-->
+
+
+
 </head>
+
 
 <!--<script type="text/javascript">-->
 <!--    Jmol.getApplet("myJmol")-->
