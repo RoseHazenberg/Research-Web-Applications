@@ -13,7 +13,16 @@
             <img class="navbar-logo" th:src="@{/images/hanze-logo.png}" alt="Hanze logo"></a>
         <a th:href="@{home}"><i class="fa fa-fw fa-home"></i> Home</a>
         <a th:href="@{input}"><i class="fa fa-fw fa-file"></i> Input</a>
-        <a th:href="@{examples}"><i class="fa fa-fw fa-file"></i> Examples</a>
+        <div class="dropdown">
+            <button class="dropbtn"><i class="fa fa-list"></i> Examples</button>
+            <div class="dropdown-content">
+                <a th:href="@{1igt}">1igt</a>
+                <a th:href="@{1svc}">1svc</a>
+                <a th:href="@{2uv8a}">2uv8a</a>
+                <a th:href="@{7kj2}">7kj2</a>
+                <a th:href="@{7kx4}">7kx4</a>
+            </div>
+        </div>
         <div class="navbar-right">
             <a th:href="@{contact}"><i class="fa fa-fw fa-envelope"></i> Contact</a>
             <a href="#"><i class="fa fa-fw fa-globe"></i> Translate</a>
