@@ -1,0 +1,77 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+
+<div th:insert="/template.html"></div>
+
+<body>
+<!-- Molecular interaction Section -->
+<div class="container-content" style="background-color:#f1f1f1">
+  <div class="row-content">
+    <div class="column-33">
+      <img src="/images/protein-pdb.png" alt="pdbModel" width="2000" height="1187">
+    </div>
+    <div class="column-66">
+      <h1 class="xlarge-font"><b th:text="#{page.title}">_page_title</b></h1>
+      <p><span style="font-size:24px" th:text="#{about.msg}">_about_message_</span>
+        <br th:text="#{about.section}"> </p>
+      <a th:href="@{examples}"><button class="button" style="background-color:red" th:text="#{examples.txt}">_examples_</button></a>
+    </div>
+  </div>
+</div>
+</body>
+
+<head>
+  <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+
+  <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}"></script>
+  <script>
+    var Info = {
+      color: "#FFFFFF",
+      height: 1000,
+      width: 1000,
+      script: "load " + "/data/2uv8a.pdb",
+      j2sPath: "/jsmol/j2s",
+      align: "right",
+    };
+
+    jmolApplet0 = Jmol.getApplet("myJmol", Info);
+    Jmol.script(jmolApplet0, "background white; spin on")
+  </script>
+</head>
+
+<body>
+<div class="footer">
+  <div class="footer-content">
+
+    <div class="footer-section about">
+      <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+      <p>
+        Molecular interaction
+      </p>
+      <!--            <a><i class="fa fa-fw fa-phone" style="color: white"></i> Phone</a><br/>-->
+      <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">
+        <i class="fa fa-fw fa-github"></i></a>
+    </div>
+    <div class="footer-section links">
+      <h4> Quick links</h4>
+      <ul>
+        <li><a href="home" style="color: white">Home</a></li>
+        <li><a href="input" style="color: white">Input</a></li>
+        <li><a href="contact" style="color: white">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-section contact-form">
+            <span>
+            <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science--technology/opleidingen/bachelor/bio-informatica}">
+                <img class="navbar-logo" th:src="@{/images/hanze-logo.png}" alt="Hanze logo" height="5px" width="5px"></a>
+            </span>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p th:text="#{copyright.msg}"></p>
+  </div>
+</div>
+</body>
+</html>
