@@ -16,11 +16,16 @@
         <div class="dropdown">
             <button class="dropbtn"><i class="fa fa-list"></i> Examples</button>
             <div class="dropdown-content">
-                <a th:href="@{1igt}">1igt</a>
-                <a th:href="@{1svc}">1svc</a>
-                <a th:href="@{2uv8a}">2uv8a</a>
-                <a th:href="@{7kj2}">7kj2</a>
-                <a th:href="@{7kx4}">7kx4</a>
+                <a th:href="@{'/examples?molecule=' + @{1igt}}" th:text="1igt">_1igt_</a>
+                <a th:href="@{'/examples?molecule=' + @{1svc}}" th:text="1svc">_1svc_</a>
+                <a th:href="@{'/examples?molecule=' + @{2uv8a}}" th:text="2uv8a">_2uv8a_</a>
+                <a th:href="@{'/examples?molecule=' + @{7kj2}}" th:text="7kj2">_7kj2_</a>
+                <a th:href="@{'/examples?molecule=' + @{7kx4}}" th:text="7kx4">_7kx4_</a>
+<!--                <a th:href="@{1igt}">1igt</a>-->
+<!--                <a th:href="@{1svc}">1svc</a>-->
+<!--                <a th:href="@{2uv8a}">2uv8a</a>-->
+<!--                <a th:href="@{7kj2}">7kj2</a>-->
+<!--                <a th:href="@{7kx4}">7kx4</a>-->
             </div>
         </div>
         <div class="navbar-right">
