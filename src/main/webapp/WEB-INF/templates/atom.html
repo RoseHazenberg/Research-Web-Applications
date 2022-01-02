@@ -3,6 +3,12 @@
 
 <div th:insert="/template.html"></div>
 
+<style>
+.center {
+    width: 720px;
+    margin: auto;
+}
+</style>
 <!--<head>-->
 <!--    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">-->
 <!--    <script src="/jmol-14.32.1/jsmol/JSmol.min.js"> </script>-->
@@ -18,6 +24,7 @@
 <!--</html>-->
 
 <head>
+    <div class="center">
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
 
     <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}"></script>
@@ -34,7 +41,18 @@
         jmolApplet0 = Jmol.getApplet("myJmol", Info);
         Jmol.script(jmolApplet0, "background white; spin on")
     </script>
+    </div>
 </head>
+
+<br clear="all"/ >
+<b>Model:</b>
+<input name="vis" type="radio" onclick="javascript:Jmol.script(jmolApplet0,
+                  'wireframe only; ');" checked="checked">Wireframe</input>
+<input name="vis" type="radio" onclick="javascript:Jmol.script(jmolApplet0,
+                  'cartoon only; ');">Cartoon</input>
+<input name="vis" type="radio" onclick="javascript:Jmol.script(jmolApplet0,
+                  'meshribbons only; ');">Meshribbons</input>
+</br>
 
 <b>Spin:</b>
 <label>
@@ -134,15 +152,16 @@
             <p>
                 Molecular interaction
             </p>
-            <a><i class="fa fa-fw fa-phone"></i> Phone</a><br/>
-            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}">
+            <!--            <a><i class="fa fa-fw fa-phone" style="color: white"></i> Phone</a><br/>-->
+            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">
                 <i class="fa fa-fw fa-github"></i></a>
         </div>
         <div class="footer-section links">
             <h4> Quick links</h4>
             <ul>
-                <a href="home"><li>Home</li></a>
-                <a href="input"><li>Input</li></a>
+                <li><a href="home" style="color: white">Home</a></li>
+                <li><a href="input" style="color: white">Input</a></li>
+                <li><a href="contact" style="color: white">Contact</a></li>
             </ul>
         </div>
         <div class="footer-section contact-form">
