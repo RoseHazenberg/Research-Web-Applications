@@ -7,49 +7,68 @@
 </head>
 
 <body>
+<!-- Molecular interaction Section -->
+<div class="container-content" style="background-color:#f1f1f1">
+    <div class="row-content">
+        <div class="column-33">
+            <img src="/images/protein-pdb.png" alt="pdbModel" width="2000" height="1187">
+        </div>
+        <div class="column-66">
+            <h1 class="xlarge-font"><b th:text="#{page.title}">_page_title</b></h1>
+            <p><span style="font-size:24px" th:text="#{about.msg}">_about_message_</span>
+                <br th:text="#{about.section}"> </p>
+            <a th:href="@{examples}"><button class="button" style="background-color:red" th:text="#{examples.txt}">_examples_</button></a>
+        </div>
+    </div>
+</div>
+
+<!-- Leap motion Section -->
 <div class="container-content">
     <div class="row-content">
         <div class="column-66">
             <h1 class="xlarge-font"><b>Leap Motion</b></h1>
-            <h1 class="large-font" style="color:MediumSeaGreen;"><b>What is it?</b></h1>
-            <p><span style="font-size:24px">Make movements with your hands.</span> <br> </p>
-            <button class="button">Download Application</button>
-            <a th:href="@{https://www.ultraleap.com/}"><button class="button">Read More</button></a>
+            <h1 class="large-font" style="color:MediumSeaGreen;"><b th:text="#{what.msg}">_what_msg_</b></h1>
+            <p><span style="font-size:24px" th:text="#{leap_motion.msg}">_leap_motion_message_</span>
+                <br th:text="#{leap_motion.txt}"> <cite><a th:href="@{https://www.ultraleap.com/product/leap-motion-controller/#overview}">Leap Motion</a></cite> </p>
+            <button class="button" th:text="#{download.txt}">_download_application_</button>
+            <a th:href="@{https://www.ultraleap.com/product/leap-motion-controller/}"><button class="button" th:text="#{read.txt}">_read_more_</button></a>
         </div>
         <div class="column-33">
-            <img src="/images/motion-leap.png" width="335" height="471" alt="leap-motion">
+            <img src="/images/motion-leap.png" width="612" height="323" alt="leap-motion">
         </div>
     </div>
 </div>
 
-<!-- Clarity Section -->
+<!-- JSmol Section -->
 <div class="container-content" style="background-color:#f1f1f1">
     <div class="row-content">
         <div class="column-33">
-            <img src="/images/JSmol-logo.png" alt="JSmol" width="335" height="471">
+            <img src="/images/JSmol-logo.png" alt="JSmol" width="286" height="100">
         </div>
         <div class="column-66">
             <h1 class="xlarge-font"><b>JSmol</b></h1>
-            <h1 class="large-font" style="color:red;"><b>What is it?</b></h1>
-            <p><span style="font-size:24px">Create a molecule that moves.</span> <br> Hello </p>
-            <a th:href="@{https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.1/Jmol-14.32.1-binary.zip/download}"><button class="button" style="background-color:red">Download Application</button></a>
-            <a th:href="@{http://jmol.sourceforge.net/}"><button class="button" style="background-color:red">Read More</button></a>
-            <a th:href="@{examples}"><button class="button" style="background-color:red">Examples</button></a>
+            <h1 class="large-font" style="color:red;"><b th:text="#{what.msg}">_what_msg_</b></h1>
+            <p><span style="font-size:24px" th:text="#{jsmol.msg}">_jsmol_message</span>
+                <br th:text="#{jsmol.txt}"> <cite><a th:href="@{https://wiki.jmol.org/index.php/JSmol}">JSmol</a></cite> </p>
+            <a th:href="@{https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.1/Jmol-14.32.1-binary.zip/download}">
+                <button class="button" style="background-color:red" th:text="#{download.txt}">_download_application_</button></a>
+            <a th:href="@{http://jmol.sourceforge.net/}"><button class="button" style="background-color:red" th:text="#{read.txt}">_read_more_</button></a>
+            <a th:href="@{examples}"><button class="button" style="background-color:red" th:text="#{examples.txt}">_examples_</button></a>
         </div>
     </div>
 </div>
 
-<!-- The App Section -->
+<!-- About Us Section -->
 <div class="container-content">
     <div class="row-content">
         <div class="column-66">
-            <h1 class="xlarge-font"><b>About ??</b></h1>
-            <h1 class="large-font" style="color:MediumSeaGreen;"><b>What is it?</b></h1>
-            <p><span style="font-size:24px">Create a molecule that moves.</span> <br> OK </p>
-<!--            <button class="button">Download Application</button>-->
+            <h1 class="xlarge-font"><b>About Us</b></h1>
+            <h1 class="large-font" style="color:MediumSeaGreen; font-size: 24px"><b>Who are we?</b></h1>
+<!--            <span style="font-size:24px"></span> <br>-->
+            <p>Where are two students of the Hanze University of Applied Science Bio Informatics</p>
         </div>
         <div class="column-33">
-            <img src="/images/JSmol-logo.png" width="335" height="471"  alt="jsmol">
+            <img src="/images/JSmol-logo.png" width="286" height="100" alt="jsmol">
         </div>
     </div>
 </div>
@@ -62,15 +81,16 @@
             <p>
                 Molecular interaction
             </p>
-            <a><i class="fa fa-fw fa-phone"></i> Phone</a><br/>
-            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}">
+<!--            <a><i class="fa fa-fw fa-phone" style="color: white"></i> Phone</a><br/>-->
+            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">
                 <i class="fa fa-fw fa-github"></i></a>
         </div>
         <div class="footer-section links">
             <h4> Quick links</h4>
             <ul>
-                <a href="home"><li>Home</li></a>
-                <a href="input"><li>Input</li></a>
+                <li><a href="home" style="color: white">Home</a></li>
+                <li><a href="input" style="color: white">Input</a></li>
+                <li><a href="contact" style="color: white">Contact</a></li>
             </ul>
         </div>
         <div class="footer-section contact-form">
