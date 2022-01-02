@@ -5,7 +5,7 @@
     <div th:insert="/template.html"></div>
 </head>
 <body>
-<h1 th:text="#{input.msg}"></h1>
+<p th:text="#{input.msg}"></p>
 <form th:action="@{data_upload}" method="post" enctype="multipart/form-data">
     <input type="file" name="pdb_data" accept="text/pdb">
     <input type="submit" value="Upload"/>
