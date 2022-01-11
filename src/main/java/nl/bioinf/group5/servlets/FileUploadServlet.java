@@ -12,7 +12,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
 @WebServlet(name = "FileUploadServlet", urlPatterns = {"/input", "/data_upload"})
 public class FileUploadServlet extends HttpServlet {
     @Override
@@ -35,7 +34,8 @@ public class FileUploadServlet extends HttpServlet {
         String outputFolder = getInitParameter("upload");
         Files.createDirectories(Paths.get(outputFolder));
         File fileSaveDir = new File(outputFolder);
-        if (! fileSaveDir.exists()) {
+        if (!fileSaveDir.exists()) {
+            fileSaveDir.mkdir();
             throw new IllegalStateException("Upload dir does not exist: " + outputFolder);
         }
 
@@ -47,7 +47,29 @@ public class FileUploadServlet extends HttpServlet {
         for (Part part : request.getParts()) {
             part.write(outputFolder + sessionid + ".pdb");
         }
-        response.sendRedirect("atom");
-    }
 
+        WebContext ctx = new WebContext(
+                request,
+                response,
+                request.getServletContext(),
+                request.getLocale());
+
+
+        Part filePart = request.getPart("pdb_data");
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+        //Defines the next page
+        String nextPage;
+
+        System.out.println("fileName = " + fileName);
+        if (fileName.isEmpty()) {
+            ctx.setVariable("message", "There is no file provided; please try again");
+            ctx.setVariable("message_type", "error");
+            nextPage = "input";
+        } else {
+            nextPage = "atom";
+        }
+
+        WebConfig.createTemplateEngine(getServletContext()).
+                process(nextPage, ctx, response.getWriter());
+    }
 }
