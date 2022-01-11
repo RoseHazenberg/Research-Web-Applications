@@ -5,7 +5,9 @@
     <div th:insert="/template.html"></div>
 </head>
 <body>
-<p th:text="#{input.msg}"></p>
+<h3 th:text="#{input.msg}"></h3>
+<p>Please upload a pdb file with you molecule to view.</p>
+<h4 th:text="${message}" th:class="${message_type}">_message_</h4>
 <form th:action="@{data_upload}" method="post" enctype="multipart/form-data">
     <input type="file" name="pdb_data" accept="text/pdb">
     <input type="submit" value="Upload"/>
