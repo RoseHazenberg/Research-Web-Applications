@@ -40,12 +40,12 @@ public class FileUploadServlet extends HttpServlet {
         }
 
         HttpSession session = request.getSession(true);
-        String sessionid = session.getId();
+        String sessionId = session.getId();
 
         //This generates a file name something like this
         //14260971264207930189.pdb
         for (Part part : request.getParts()) {
-            part.write(outputFolder + sessionid + ".pdb");
+            part.write(outputFolder + sessionId + ".pdb");
         }
 
         WebContext ctx = new WebContext(
