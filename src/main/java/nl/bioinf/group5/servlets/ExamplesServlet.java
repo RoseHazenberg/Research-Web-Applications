@@ -36,19 +36,19 @@ public class ExamplesServlet extends HttpServlet {
 
         String molecule = request.getParameter("molecule");
 
-        if (molecule.startsWith("1igt")) {
+        if (molecule.equals("1igt")) {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("1igt", ctx, response.getWriter());
-        } else if (molecule.startsWith("1svc")) {
+        } else if (molecule.equals("1svc")) {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("1svc", ctx, response.getWriter());
-        } else if (molecule.startsWith("2uv8a")) {
+        } else if (molecule.equals("2uv8a")) {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("2uv8a", ctx, response.getWriter());
-        } else if (molecule.startsWith("7kj2")) {
+        } else if (molecule.equals("7kj2")) {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("7kj2", ctx, response.getWriter());
-        } else if (molecule.startsWith("7kx4")) {
+        } else if (molecule.equals("7kx4")) {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("7kx4", ctx, response.getWriter());
         }
