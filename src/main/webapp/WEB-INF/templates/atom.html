@@ -39,17 +39,7 @@
         };
 
         jmolApplet0 = Jmol.getApplet("myJmol", Info);
-
-        for (let i = 0; i < 2000; i+=150) {
-            Jmol.script(jmolApplet0, "background white; spin on;" + " zoom " + i + ";")
-            Jmol.script(jmolApplet0, "delay 1")
-        }
-
-
-
-
-
-
+        Jmol.script(jmolApplet0, "background white; spin on")
     </script>
     </div>
 </head>

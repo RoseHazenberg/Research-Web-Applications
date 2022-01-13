@@ -1,16 +1,83 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+<!--    <link rel="stylesheet" th:href="@{/css/stylesheet_page_less_content.css}">-->
     <div th:insert="/template.html"></div>
+
+    <style>
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing:    border-box;
+            box-sizing:         border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            position: relative;
+            margin: 0;
+            padding-bottom: 4rem;
+            min-height: 100%;
+            /*font-family: "Helvetica Neue", Arial, sans-serif;*/
+        }
+
+        .footer {
+            background: Black;
+            color: white;
+            height: 200px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+
+
+    </style>
 </head>
 <body>
 <h3 th:text="#{input.msg}"></h3>
-<p>Please upload a pdb file with you molecule to view.</p>
+<!--<p th:text="#{upload.msg}">_upload_message</p>-->
 <h4 th:text="${message}" th:class="${message_type}">_message_</h4>
 <form th:action="@{data_upload}" method="post" enctype="multipart/form-data">
     <input type="file" name="pdb_data" accept="text/pdb">
     <input type="submit" value="Upload"/>
 </form>
+
+<div class="footer">
+    <div class="footer-content">
+
+        <div class="footer-section about">
+            <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+            <p>
+                Molecular interaction
+            </p>
+            <!--            <a><i class="fa fa-fw fa-phone" style="color: white"></i> Phone</a><br/>-->
+            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">
+                <i class="fa fa-fw fa-github"></i></a>
+        </div>
+        <div class="footer-section links">
+            <p style="font-weight: bold;">Quick links</p>
+            <a href="home" style="color: white">Home page</a></br>
+            <a href="input" style="color: white">Molecule interaction</a></br>
+            <a href="contact" style="color: white">Contact us</a></br>
+        </div>
+        <div class="footer-section contact-form">
+            <span>
+<!--                <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science&#45;&#45;technology/opleidingen/bachelor/bio-informatica}">-->
+                <a th:href="@{home}">
+                    <img style="width: 200px; height: 100px; overflow: hidden; float: left;" th:src="@{/images/AR.PNG}" alt="A&R logo"></a>
+                <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p th:text="#{copyright.msg}"></p>
+    </div>
+</div>
 </body>
 </html>
