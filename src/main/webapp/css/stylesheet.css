@@ -138,11 +138,40 @@ a:hover {
     padding: 20px;
 }
 
+.mom {
+    float: left;
+    width: 25%;
+    padding: 15px;
+    border-radius: 0px;
+    border-style: solid;
+    border-top-color: #365492;
+    border-top-width: 50px;
+    border-bottom-color: #4a69ad;
+    border-bottom-width: 50px;
+    margin:auto;
+}
+.mom h2 {
+    position: relative;
+    top: -70px;
+    color: white;
+}
+.mom p {
+    position: relative;
+    margin-bottom: -50px;
+    color: white;
+    font-size: larger;
+    font-style: oblique;
+}
+
+.mom img {
+    position: center;
+}
 .column-33 {
     float: left;
     width: 33.33333%;
     padding: 20px;
 }
+
 
 .large-font {
     font-size: 48px;
