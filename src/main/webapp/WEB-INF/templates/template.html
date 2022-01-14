@@ -1,7 +1,8 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
     <title th:text="#{tab.title}">_tab_title_</title>
@@ -25,7 +26,6 @@
         </div>
         <div class="navbar-right">
             <a th:href="@{contact}"><i class="fa fa-fw fa-envelope"></i> Contact</a>
-<!--            <a href="#"><i class="fa fa-fw fa-globe"></i> Translate</a>-->
             <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}">
                 <i class="fa fa-fw fa-github"></i></a>
         </div>
