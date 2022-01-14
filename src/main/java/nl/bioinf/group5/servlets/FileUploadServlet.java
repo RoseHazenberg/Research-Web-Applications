@@ -65,6 +65,10 @@ public class FileUploadServlet extends HttpServlet {
             ctx.setVariable("message", "There is no file provided; please try again");
             ctx.setVariable("message_type", "error");
             nextPage = "input";
+        } else if (!fileName.endsWith("pdb")) {
+            ctx.setVariable("message", "The file provided is not a pdb file; please try again");
+            ctx.setVariable("message_type", "error");
+            nextPage = "input";
         } else {
             nextPage = "atom";
         }
