@@ -1,36 +1,38 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<!--    <link rel="stylesheet" th:href="@{/css/stylesheet_page_less_content.css}">-->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <div th:insert="/template.html"></div>
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
 
     <style>
-        *,
-        *:before,
-        *:after {
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing:    border-box;
-            box-sizing:         border-box;
-        }
+        /**,*/
+        /**:before,*/
+        /**:after {*/
+        /*    -webkit-box-sizing: border-box;*/
+        /*    -moz-box-sizing:    border-box;*/
+        /*    box-sizing:         border-box;*/
+        /*}*/
 
-        html {
-            height: 100%;
-        }
+        /*html {*/
+        /*    height: 100%;*/
+        /*}*/
 
-        body {
-            position: relative;
-            margin: 0;
-            padding-bottom: 4rem;
-            min-height: 100%;
-            /*font-family: "Helvetica Neue", Arial, sans-serif;*/
-        }
+        /*body {*/
+        /*    position: relative;*/
+        /*    margin: 0;*/
+        /*    padding-bottom: 4rem;*/
+        /*    min-height: 100%;*/
+        /*    !*font-family: "Helvetica Neue", Arial, sans-serif;*!*/
+        /*}*/
 
         .footer {
             background: Black;
             color: white;
             height: 200px;
             width: 100%;
-            position: relative;
+            position: absolute;
             bottom: 0;
         }
 
@@ -48,35 +50,28 @@
 
 <div class="footer">
     <div class="footer-content">
-
         <div class="footer-section about">
-            <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
-            <p>
-                Molecular interaction
-            </p>
-            <!--            <a><i class="fa fa-fw fa-phone" style="color: white"></i> Phone</a><br/>-->
-            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">
-                <i class="fa fa-fw fa-github"></i></a>
+            <p style="font-weight: bold" th:text="#{footer.title}">_molecular_interaction_</p>
+            <p th:text="#{footer.msg('ë')}"><span></span><br/>_footer_message_</p>
+            <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">Github<i class="fa fa-fw fa-github"></i></a>
         </div>
         <div class="footer-section links">
-            <p style="font-weight: bold;">Quick links</p>
-            <a href="home" style="color: white">Home page</a></br>
-            <a href="input" style="color: white">Molecule interaction</a></br>
-            <a href="contact" style="color: white">Contact us</a></br>
+            <p style="font-weight: bold;" th:text="#{links.msg}">_quick_links_</p>
+            <a href="home" style="color: white">Home</a><br/>
+            <a href="input" style="color: white" th:text="#{footer.title}">_molecular_interaction_</a><br/>
+            <a href="contact" style="color: white">Contact</a><br/>
         </div>
         <div class="footer-section contact-form">
             <span>
-<!--                <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science&#45;&#45;technology/opleidingen/bachelor/bio-informatica}">-->
                 <a th:href="@{home}">
-                    <img style="width: 200px; height: 100px; overflow: hidden; float: left;" th:src="@{/images/AR.PNG}" alt="A&R logo"></a>
-                <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+                    <img style="width: 200px; height: 70px; overflow: hidden; float: left;" th:src="@{/images/ARlogo.PNG}" alt="A&R logo"></a>
+                <p class="navbar-logo"><span>Rose & Akastia</span><br th:text="#{bioinformatics.msg}"/></p>
             </span>
         </div>
-
     </div>
 
     <div class="footer-bottom">
-        <p th:text="#{copyright.msg}"></p>
+        <p th:text="#{copyright.msg('©')}"></p>
     </div>
 </div>
 </body>
