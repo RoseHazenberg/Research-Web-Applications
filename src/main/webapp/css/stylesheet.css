@@ -198,6 +198,7 @@ img {
 
 @media screen and (max-width: 1000px) {
     .column-66,
+    .mom,
     .column-33 {
         width: 100%;
         text-align: center;
