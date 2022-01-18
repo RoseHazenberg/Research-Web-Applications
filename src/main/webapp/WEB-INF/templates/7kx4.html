@@ -30,13 +30,20 @@
             height: 1000,
             width: 1000,
             script: "load " + "/data/7kx4.pdb",
-            j2sPath: "/jsmol/j2s",
+            j2sPath: "../../jsmol/j2s",
             align: "right",
         };
 
         jmolApplet0 = Jmol.getApplet("myJmol", Info);
-        Jmol.script(jmolApplet0, "background white; spin on")
+        // Set initial zoom level
+        let initzoom = 80;
+        let zoom = initzoom
+        Jmol.script(jmolApplet0, `background white; spin off; zoom ${initzoom}`);
     </script>
+
+    <!-- Include Leap Motion libraries -->
+    <script type="text/javascript" th:src="@{/js/leap-1.1.1.min.js}" src="../../js/leap-1.1.1.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/leapmolecule.js}" src="../../js/leapmolecule.js"></script>
 </head>
 
 <body>
