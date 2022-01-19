@@ -1,0 +1,74 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <div th:insert="/template.html"></div>
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div class="navbar title-large title-animate-bottom">
+    <a href="https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science--technology/opleidingen/bachelor/bio-informatica">
+        <img class="navbar-logo" src="/images/hanze-logo.png" alt="Hanze logo"></a>
+    <a href="home"><i class="fa fa-home"></i> Home</a>
+    <a href="input"><i class="fa fa-file"></i> Input</a>
+    <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-list"></i> Examples</button>
+        <div class="dropdown-content">
+            <a href='/examples?molecule=1igt'>1IGT</a>
+            <a href='/examples?molecule=1svc'>1SVC</a>
+            <a href='/examples?molecule=2uv8a'>2UV8A</a>
+            <a href='/examples?molecule=7kj2'>7KJ2</a>
+            <a href='/examples?molecule=7kx4'>7KX4</a>
+        </div>
+    </div>
+    <div class="navbar-right">
+        <a href="contact"><i class="fa fa-envelope"></i> Contact</a>
+        <a href="https://github.com/RoseHazenberg/Research-Web-Applications">
+            <i class="fa fa-github"></i></a>
+    </div>
+</div>
+<header class="title-container title-theme title-padding" id="myHeader">
+    <div class="title-center">
+        <div class="gap-20"></div>
+        <h1 class="title-large title-animate-bottom" th:text="#{page.title}"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Status 404</h1>
+    </div>
+</header>
+
+<div class="container-content">
+    <h1><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Status 404</h1>
+    <p th:text="#{page.msg}">_offline_</p>
+    <p>Please return to the <a href="home">home page.</a></p>
+    <p>Or return to one of the pages in the navigation bar.</p>
+</div>
+
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <p style="font-weight: bold">Molecular interaction</p>
+            <p>We create possibilities to interacted with any molecule.<span></span><br/>Let it turn.</p>
+            <a href="https://github.com/RoseHazenberg/Research-Web-Applications" style="color: white">Github<i class="fa fa-github"></i></a>
+        </div>
+        <div class="footer-section links">
+            <p style="font-weight: bold;">Quick links</p>
+            <a href="home" style="color: white">Home page</a></br>
+            <a href="input" style="color: white">Molecule interaction</a></br>
+            <a href="contact" style="color: white">Contact us</a></br>
+        </div>
+        <div class="footer-section contact-form">
+            <span>
+                <a href="home">
+                    <img style="width: 200px; height: 70px; overflow: hidden; float: left;" src="/images/ARlogo.PNG" alt="A&R logo"></a>
+                <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+            </span>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>All copyrights reserved &copy Rose Hazenberg & Akastia Christo</p>
+    </div>
+</div>
+</body>
+</html>

@@ -53,7 +53,7 @@
 
     <error-page>
         <error-code>404</error-code>
-        <location>/WEB-INF/templates/custom-not-found-page.html</location>
+        <location>/WEB-INF/templates/page-not-found.html</location>
     </error-page>
 
     <error-page>
