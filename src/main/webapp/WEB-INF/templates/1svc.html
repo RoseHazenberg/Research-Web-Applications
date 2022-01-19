@@ -24,23 +24,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}"></script>
+    <!-- Get the jmol with a pdb file that has been given-->
+    <script type="text/javascript" th:src="@{/js/jmol.js}" src="../../js/jmol.js"></script>
     <script>
-        var Info = {
-            color: "#FFFFFF",
-            height: 1000,
-            width: 1000,
-            script: "load " + "/data/1svc.pdb",
-            j2sPath: "../../jsmol/j2s",
-            align: "right",
-        };
-
-        jmolApplet0 = Jmol.getApplet("myJmol", Info);
-        // Set initial zoom level
-        let initzoom = 80;
-        let zoom = initzoom
-        Jmol.script(jmolApplet0, `background white; spin off; zoom ${initzoom}`);
+        pdbViewer("1svc.pdb");
     </script>
-
     <!-- Include Leap Motion libraries -->
     <script type="text/javascript" th:src="@{/js/leap-1.1.1.min.js}" src="../../js/leap-1.1.1.min.js"></script>
     <script type="text/javascript" th:src="@{/js/leapmolecule.js}" src="../../js/leapmolecule.js"></script>
