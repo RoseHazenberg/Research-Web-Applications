@@ -91,7 +91,6 @@ let controller = Leap.loop({enableGestures: true}, function(frame) {
         } else if (hands[index].pitch >= 70) {
             Jmol.script(jmolApplet0, `zoom ${zoom++}`);
         } else if (hands[index].pitch <= -20) {
-            console.log("Zoom out");
             Jmol.script(jmolApplet0, `zoom ${zoom -= 1}`);
         } 
       }
