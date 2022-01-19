@@ -70,6 +70,7 @@ public class FileUploadServlet extends HttpServlet {
             ctx.setVariable("message_type", "error");
             nextPage = "input";
         } else {
+            ctx.setVariable("filename", fileName.replace(".pdb", ""));
             nextPage = "atom";
         }
 

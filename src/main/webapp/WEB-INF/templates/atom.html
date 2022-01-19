@@ -1,27 +1,30 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <div th:insert="/template.html"></div>
+<body>
+<div th:class="container-content">
+    <h1 th:text="#{file.msg(${filename})}"></h1>
+</div>
+</body>
 
 <head>
 <!--    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">-->
-
-    <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}"></script>
+    <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}" src="../../jsmol/JSmol.min.js"></script>
     <script>
         var Info = {
             color: "#FFFFFF",
             height: 1000,
             width: 1000,
             script: "load " + "/output",
-            j2sPath: "/jsmol/j2s",
-            align: "right",
+            j2sPath: "../../jsmol/j2s",
         };
 
         jmolApplet0 = Jmol.getApplet("myJmol", Info);
         // Set initial zoom level
         let initzoom = 80;
         let zoom = initzoom
-        Jmol.script(jmolApplet0, `background white; spin off; zoom ${initzoom}`);
+        Jmol.script(jmolApplet0, `spin off; zoom ${initzoom}`);
     </script>
 
     <!-- Include Leap Motion libraries -->
