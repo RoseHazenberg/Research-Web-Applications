@@ -7,26 +7,6 @@
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
 
     <style>
-        /**,*/
-        /**:before,*/
-        /**:after {*/
-        /*    -webkit-box-sizing: border-box;*/
-        /*    -moz-box-sizing:    border-box;*/
-        /*    box-sizing:         border-box;*/
-        /*}*/
-
-        /*html {*/
-        /*    height: 100%;*/
-        /*}*/
-
-        /*body {*/
-        /*    position: relative;*/
-        /*    margin: 0;*/
-        /*    padding-bottom: 4rem;*/
-        /*    min-height: 100%;*/
-        /*    !*font-family: "Helvetica Neue", Arial, sans-serif;*!*/
-        /*}*/
-
         .footer {
             background: Black;
             color: white;
@@ -35,16 +15,14 @@
             position: absolute;
             bottom: 0;
         }
-
-
     </style>
 </head>
 <body>
 <h3 th:text="#{input.msg}"></h3>
-<!--<p th:text="#{upload.msg}">_upload_message</p>-->
 <h4 th:text="${message}" th:class="${message_type}">_message_</h4>
+
 <form th:action="@{data_upload}" method="post" enctype="multipart/form-data">
-    <input type="file" name="pdb_data" accept="text/pdb">
+    <input type="file" name="pdb_data" accept="text/pdb" required/>
     <input type="submit" value="Upload"/>
 </form>
 
