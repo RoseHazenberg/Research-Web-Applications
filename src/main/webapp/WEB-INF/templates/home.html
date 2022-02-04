@@ -19,7 +19,6 @@
             <h1 class="xlarge-font"><b th:text="#{page.title}">_page_title</b></h1>
             <p><span style="font-size:24px" th:text="#{about.msg}">_about_message_</span>
                 <br th:text="#{about.section}"> </p>
-<!--            <a th:href="@{examples}"><button class="button" style="background-color:red" th:text="#{examples.txt}">_examples_</button></a>-->
             <div class="dropdown">
                 <button class="button" style="background-color:red" th:text="#{examples.txt}"></button>
                 <div class="dropdown-content">
@@ -39,7 +38,7 @@
     <div class="row-content">
         <div class="column-66">
             <h1 class="xlarge-font"><b>Leap Motion</b></h1>
-            <h1 class="large-font" style="color:MediumSeaGreen;"><b th:text="#{what.msg}">_what_msg_</b></h1>
+            <p class="large-font" style="color:MediumSeaGreen;"><b th:text="#{what.msg}">_what_msg_</b></p>
             <p><span style="font-size:24px" th:text="#{leap_motion.msg}">_leap_motion_message_</span>
                 <br th:text="#{leap_motion.txt}"> <cite><a th:href="@{https://www.ultraleap.com/product/leap-motion-controller/#overview}">Leap Motion</a></cite> </p>
             <button class="button" th:text="#{download.txt}">_download_application_</button>
@@ -59,7 +58,7 @@
         </div>
         <div class="column-66">
             <h1 class="xlarge-font"><b>JSmol</b></h1>
-            <h1 class="large-font" style="color:red;"><b th:text="#{what.msg}">_what_msg_</b></h1>
+            <p class="large-font" style="color:red;"><b th:text="#{what.msg}">_what_msg_</b></p>
             <p><span style="font-size:24px" th:text="#{jsmol.msg}">_jsmol_message</span>
                 <br th:text="#{jsmol.txt}"> <cite><a th:href="@{https://wiki.jmol.org/index.php/JSmol}">JSmol</a></cite> </p>
             <a th:href="@{https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.1/Jmol-14.32.1-binary.zip/download}">
@@ -75,14 +74,13 @@
         <div class="column-66">
             <h1 class="xlarge-font"><b>About Us</b></h1>
             <h1 class="large-font" style="color:MediumSeaGreen; font-size: 24px"><b>Who are we?</b></h1>
-            <!--            <span style="font-size:24px"></span> <br>-->
             <p><span style="font-size:21px" th:text="#{about_us.msg}">_about_us</span>
                 <br th:text="#{about_us.section}"> </p>
         </div>
         <div class="mom">
-            <h2 style="text-align: center"><b th:text="#{mom}"></b></h2>
+            <h2 style="text-align: center"><b th:text="#{mom(${date})}"></b></h2>
             <a th:href="@{https://pdb101.rcsb.org/motm/265}">
-                <img src="/images/Golgi_casein_kinase.jpg" width="286" height="60" alt="MOM"></a>
+                <img th:src="@{/images/Golgi_casein_kinase.jpg}" width="286" height="60" alt="MOM"></a>
             <p style="text-align: center"> Golgi Casein Kinase</p>
         </div>
     </div>
