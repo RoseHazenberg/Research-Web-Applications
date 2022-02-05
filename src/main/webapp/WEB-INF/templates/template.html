@@ -1,5 +1,7 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
+
+<!-- Setup and resources -->
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -9,7 +11,8 @@
 </head>
 
 <body>
-    <div class="navbar title-large title-animate-bottom">
+    <!-- Navigation bar -->
+    <div th:fragment="navigation-bar" class="navbar title-large title-animate-bottom">
         <a th:href="@{https://www.hanze.nl/nld/onderwijs/techniek/instituut-voor-life-science--technology/opleidingen/bachelor/bio-informatica}">
             <img class="navbar-logo" th:src="@{/images/hanze-logo.png}" alt="Hanze logo"></a>
         <a th:href="@{home}"><i class="fa fa-fw fa-home"></i> Home</a>
@@ -30,12 +33,41 @@
                 <i class="fa fa-fw fa-github"></i></a>
         </div>
     </div>
-    <header class="title-container title-theme title-padding" id="myHeader">
+    <!-- Title -->
+    <header th:fragment="header" class="title-container title-theme title-padding" id="myHeader">
         <div class="title-center">
             <div class="gap-20"></div>
             <h1 class="title-large title-animate-bottom" th:text="#{page.title(${filename})}">_page_title_</h1>
         </div>
     </header>
 
+    <!-- Footer -->
+    <div th:fragment="footer" class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <p style="font-weight: bold" th:text="#{footer.title}">_molecular_interaction_</p>
+                <p th:text="#{footer.msg}"><span></span><br/>_footer_message_</p>
+                <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">Github<i class="fa fa-fw fa-github"></i></a>
+            </div>
+            <div class="footer-section links">
+                <p style="font-weight: bold;" th:text="#{links.msg}">_quick_links_</p>
+                <a th:href="@{home}" style="color: white">Home</a><br/>
+                <a th:href="@{input}" style="color: white" th:text="#{footer.title}">_molecular_interaction_</a><br/>
+                <a th:href="@{contact}" style="color: white">Contact</a><br/>
+            </div>
+            <div class="footer-section contact-form">
+            <span>
+                <a th:href="@{home}">
+                    <img style="width: 200px; height: 70px; overflow: hidden; float: left;" th:src="@{/images/ARlogo.PNG}" alt="A&R logo"></a>
+                <p class="navbar-logo"><span>Rose & Akastia</span><br th:text="#{bioinformatics.msg}"/></p>
+            </span>
+            </div>
+        </div>
+
+        <!-- Footer containing copyright -->
+        <div class="footer-bottom">
+            <p th:text="#{copyright.msg}"></p>
+        </div>
+    </div>
 </body>
 </html>

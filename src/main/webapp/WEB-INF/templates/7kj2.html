@@ -1,10 +1,12 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org">
 
-<div th:insert="/template.html"></div>
-
 <body>
-<!-- Molecular interaction Section -->
+<!-- Insert the template which includes the layout -->
+<div th:insert="template::navigation-bar"></div>
+<div th:insert="template::header"></div>
+
+<!-- Information Section -->
 <div class="container-content" style="background-color:#f1f1f1">
   <div class="row-content">
     <div class="column-33">
@@ -19,8 +21,10 @@
 </div>
 </body>
 
+<!-- Setup and resources -->
 <head>
   <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+  <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
   <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}"></script>
@@ -34,32 +38,8 @@
   <script type="text/javascript" th:src="@{/js/leapmolecule.js}" src="../../js/leapmolecule.js"></script>
 </head>
 
+<!-- Footer -->
 <body>
-<div class="footer">
-  <div class="footer-content">
-    <div class="footer-section about">
-      <p style="font-weight: bold" th:text="#{footer.title}">_molecular_interaction_</p>
-      <p th:text="#{footer.msg}"><span></span><br/>_footer_message_</p>
-      <a th:href="@{https://github.com/RoseHazenberg/Research-Web-Applications}" style="color: white">Github<i class="fa fa-fw fa-github"></i></a>
-    </div>
-    <div class="footer-section links">
-      <p style="font-weight: bold;" th:text="#{links.msg}">_quick_links_</p>
-      <a href="home" style="color: white">Home</a><br/>
-      <a href="input" style="color: white" th:text="#{footer.title}">_molecular_interaction_</a><br/>
-      <a href="contact" style="color: white">Contact</a><br/>
-    </div>
-    <div class="footer-section contact-form">
-            <span>
-                <a th:href="@{home}">
-                    <img style="width: 200px; height: 70px; overflow: hidden; float: left;" th:src="@{/images/ARlogo.PNG}" alt="A&R logo"></a>
-                <p class="navbar-logo"><span>Rose & Akastia</span><br th:text="#{bioinformatics.msg}"/></p>
-            </span>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p th:text="#{copyright.msg}"></p>
-  </div>
-</div>
+<div th:insert="template::footer"></div>
 </body>
 </html>
