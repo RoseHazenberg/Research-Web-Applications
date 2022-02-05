@@ -1,28 +1,33 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
+<!-- Setup and resources -->
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <div th:insert="/template.html"></div>
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
     <link rel="stylesheet" th:href="@{/css/stylesheet_links.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 <body>
-<!-- About Us Section -->
-<div class="container-content">
-    <div class="row-content">
-        <div class="column-66">
-            <h1 class="xlarge-font"><b>About Us</b></h1>
-            <h1 class="large-font" style="color:MediumSeaGreen; font-size: 24px"><b>Who are we?</b></h1>
-            <p>We are two students of the Hanze University of Applied Science Bio Informatics</p>
-        </div>
-        <div class="column-33">
-            <img style="height: auto; width: auto" src="/images/ARlogo_contact.PNG" alt="A&R Logo">
-        </div>
-    </div>
-</div>
+<!-- Insert the template which includes the layout -->
+<div th:insert="template::navigation-bar"></div>
+<div th:insert="template::header"></div>
+
+<!-- About Us Section-->
+<!--<div class="container-content">-->
+<!--    <div class="row-content">-->
+<!--        <div class="column-66">-->
+<!--            <h1 class="xlarge-font"><b>About Us</b></h1>-->
+<!--            <h1 class="large-font" style="color:MediumSeaGreen; font-size: 24px"><b>Who are we?</b></h1>-->
+<!--            <p>We are two students of the Hanze University of Applied Science Bio Informatics</p>-->
+<!--        </div>-->
+<!--        <div class="column-33">-->
+<!--            <img style="height: auto; width: auto" src="/images/ARlogo_contact.PNG" alt="A&R Logo">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 <div style="text-align:center">
     <p th:text="#{contact.msg}">_contact_message_</p><br>
@@ -53,7 +58,8 @@
     </div>
 </div>
 
-<div class="footer">
+<!-- Footer -->
+<div class="footer" style="position: absolute; width: 100%">
     <div class="footer-content">
         <div class="footer-section about">
             <p style="font-weight: bold" th:text="#{footer.title}">_molecular_interaction_</p>

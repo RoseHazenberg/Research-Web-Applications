@@ -1,16 +1,25 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<div th:insert="/template.html"></div>
 <body>
+<!-- Insert the template which includes the layout -->
+<div th:insert="template::navigation-bar"></div>
+<div th:insert="template::header"></div>
+
+<!-- Filename as title -->
 <div th:class="container-content">
     <h1 th:text="#{file.msg(${filename})}"></h1>
 </div>
 </body>
 
+<!-- Setup and resources -->
 <head>
-<!--    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">-->
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <script type="text/javascript" th:src="@{/jsmol/JSmol.min.js}" src="../../jsmol/JSmol.min.js"></script>
+    <div th:class="center">
     <script>
         var Info = {
             color: "#FFFFFF",
@@ -30,5 +39,6 @@
     <!-- Include Leap Motion libraries -->
     <script type="text/javascript" th:src="@{/js/leap-1.1.1.min.js}" src="../../js/leap-1.1.1.min.js"></script>
     <script type="text/javascript" th:src="@{/js/leapmolecule.js}" src="../../js/leapmolecule.js"></script>
+    </div>
 </head>
 </html>

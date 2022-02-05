@@ -1,24 +1,22 @@
 <!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Setup and resources -->
 <head>
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css}">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <div th:insert="/template.html"></div>
-    <link rel="stylesheet" th:href="@{/css/stylesheet.css}">
-
-    <style>
-        .footer {
-            background: Black;
-            color: white;
-            height: 200px;
-            width: 100%;
-            position: absolute;
-            bottom: 0;
-        }
-    </style>
 </head>
+
 <body>
+<!-- Insert the template which includes the layout -->
+<div th:insert="template::navigation-bar"></div>
+<div th:insert="template::header"></div>
+
 <h3 th:text="#{input.msg}"></h3>
+
+<!-- Error message when the file upload is incorrect -->
 <h4 th:text="${message}" th:class="${message_type}">_message_</h4>
 
 <form th:action="@{data_upload}" method="post" enctype="multipart/form-data">
@@ -26,7 +24,8 @@
     <input type="submit" value="Upload"/>
 </form>
 
-<div class="footer">
+<!-- Footer -->
+<div class="footer" style="position: absolute; width: 100%">
     <div class="footer-content">
         <div class="footer-section about">
             <p style="font-weight: bold" th:text="#{footer.title}">_molecular_interaction_</p>
