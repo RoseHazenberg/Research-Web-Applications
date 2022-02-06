@@ -46,7 +46,8 @@
             <p class="large-font" style="color:MediumSeaGreen;"><b th:text="#{what.msg}">_what_msg_</b></p>
             <p><span style="font-size:24px" th:text="#{leap_motion.msg}">_leap_motion_message_</span>
                 <br th:text="#{leap_motion.txt}"> <cite><a th:href="@{https://www.ultraleap.com/product/leap-motion-controller/#overview}">Leap Motion</a></cite> </p>
-            <button class="button" th:text="#{download.txt}">_download_application_</button>
+            <a th:href="@{https://www.techspot.com/downloads/6701-leap-motion.html}">
+                <button class="button" th:text="#{download.txt}">_download_application_</button></a>
             <a th:href="@{https://www.ultraleap.com/product/leap-motion-controller/}"><button class="button" th:text="#{read.txt}">_read_more_</button></a>
         </div>
         <div class="column-33">
@@ -66,8 +67,8 @@
             <p class="large-font" style="color:red;"><b th:text="#{what.msg}">_what_msg_</b></p>
             <p><span style="font-size:24px" th:text="#{jsmol.msg}">_jsmol_message</span>
                 <br th:text="#{jsmol.txt}"> <cite><a th:href="@{https://wiki.jmol.org/index.php/JSmol}">JSmol</a></cite> </p>
-            <a th:href="@{https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.1/Jmol-14.32.1-binary.zip/download}">
-                <button class="button" style="background-color:red" th:text="#{download.txt}">_download_application_</button></a>
+<!--            <a th:href="@{https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.1/Jmol-14.32.1-binary.zip/download}">-->
+<!--                <button class="button" style="background-color:red" th:text="#{download.txt}">_download_application_</button></a>-->
             <a th:href="@{http://jmol.sourceforge.net/}"><button class="button" style="background-color:red" th:text="#{read.txt}">_read_more_</button></a>
         </div>
     </div>
