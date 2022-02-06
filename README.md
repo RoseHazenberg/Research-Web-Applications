@@ -46,5 +46,4 @@ We would like to thank Marcel Kempenaar for helping us to connect the leap motio
 ### Authors & Support
 Akastia Christo and Rose Hazenberg  
 Bioinformatics at Hanze University of Applied Science  
-For help or questions you can email to: m.a.christo@st.hanze.nl or c.r.hazenberg@.st.hanze.nl  
-<img alt="ARLogo" height="75" src="C:\Users\Rose Hazenberg\Thema10\Research-Web-Applications\src\main\webapp\images\ARlogo.PNG" width="150"/>
+For help or questions you can email to: m.a.christo@st.hanze.nl or c.r.hazenberg@.st.hanze.nl
