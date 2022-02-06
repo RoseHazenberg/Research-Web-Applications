@@ -3,7 +3,7 @@ Supported Gestures:
     * Standard Leap gestures:
         - Swipe (left or right): enable spin
         - Circle (left or right): reset zoom level to initzoom
-    * Cutom gestures:
+    * Custom gestures:
         - Rotate
             * X-axis: right-hand roll control
             * Y-axis: both hands, pointing upwards as if grabbing a cube
