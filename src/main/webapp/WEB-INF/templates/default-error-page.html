@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <div insert="/template.html"></div>
     <link rel="stylesheet" href="/css/stylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Default error page</title>
 </head>
 
 <body>
@@ -32,33 +32,34 @@
 <header class="title-container title-theme title-padding" id="myHeader">
     <div class="title-center">
         <div class="gap-20"></div>
-        <h1 class="title-large title-animate-bottom" th:text="#{page.title}"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Status 404</h1>
+        <h1 class="title-large title-animate-bottom"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error</h1>
     </div>
 </header>
 
 <div class="container-content">
-    <h1> An unknown error happened</h1>
+    <h1><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Error</h1>
     <p>Please return to the <a href="home">home page.</a></p>
+    <p>Or return to one of the pages in the navigation bar.</p>
 </div>
 
 <div class="footer">
     <div class="footer-content">
         <div class="footer-section about">
             <p style="font-weight: bold">Molecular interaction</p>
-            <p>We create possibilities to interacted with any molecule.<span></span><br/>Let it turn.</p>
+            <p>We create possibilities to interact with any molecule.<span></span><br/>Let it turn.</p>
             <a href="https://github.com/RoseHazenberg/Research-Web-Applications" style="color: white">Github<i class="fa fa-github"></i></a>
         </div>
         <div class="footer-section links">
-            <p style="font-weight: bold;">Quick links</p>
-            <a href="home" style="color: white">Home page</a></br>
-            <a href="input" style="color: white">Molecule interaction</a></br>
-            <a href="contact" style="color: white">Contact us</a></br>
+            <p style="font-weight: bold;">Useful links</p>
+            <a href="home" style="color: white">Home</a><br/>
+            <a href="input" style="color: white">Molecular interaction</a><br/>
+            <a href="contact" style="color: white">Contact</a><br/>
         </div>
         <div class="footer-section contact-form">
             <span>
                 <a href="home">
                     <img style="width: 200px; height: 70px; overflow: hidden; float: left;" src="/images/ARlogo.PNG" alt="A&R logo"></a>
-                <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bio Informatics</p>
+                <p class="navbar-logo"><span>Rose & Akastia</span><br/>Bioinformatics</p>
             </span>
         </div>
 

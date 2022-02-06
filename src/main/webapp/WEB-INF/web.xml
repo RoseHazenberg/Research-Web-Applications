@@ -6,6 +6,7 @@
 
     <context-param>
         <param-name>upload</param-name>
+        <!-- TODO: Change this to your own path -->
         <param-value>C:/Users/Rose Hazenberg/tmp/upload/</param-value>
     </context-param>
 
@@ -20,9 +21,11 @@
         <servlet-class>nl.bioinf.group5.servlets.FileUploadServlet</servlet-class>
         <init-param>
             <param-name>upload</param-name>
+            <!-- TODO: Change this to your own path -->
             <param-value>C:/Users/Rose Hazenberg/tmp/upload/</param-value>
         </init-param>
         <multipart-config>
+            <!-- TODO: Change this to your own path -->
             <location>C:/Users/Rose Hazenberg/tmp/tmp</location>
             <!-- all in bytes -->
             <max-file-size>20848820</max-file-size>
@@ -60,24 +63,23 @@
         <location>/WEB-INF/templates/default-error-page.html</location>
     </error-page>
 
-<!--    <error-page>-->
-<!--        <error-code>403</error-code>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <error-code>403</error-code>
+        <location>/ErrorHandler</location>
+    </error-page>
 
-<!--    <error-page>-->
-<!--        <exception-type>javax.servlet.ServletException</exception-type>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <exception-type>javax.servlet.ServletException</exception-type>
+        <location>/ErrorHandler</location>
+    </error-page>
 
-<!--    <error-page>-->
-<!--        <exception-type>java.io.IOException</exception-type>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <exception-type>java.io.IOException</exception-type>
+        <location>/ErrorHandler</location>
+    </error-page>
 
-<!--    <error-page>-->
-<!--        <exception-type>java.lang.Throwable</exception-type>-->
-<!--        <location>/ErrorHandler</location>-->
-<!--    </error-page>-->
-
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/ErrorHandler</location>
+    </error-page>
 </web-app>
