@@ -58,6 +58,7 @@ html {
     float: left;
 }
 
+/*Provides the layout of the dropdown bar of the examples in the navigation bar*/
 .dropbtn {
     background-color: Black;
     color: white;
@@ -98,7 +99,8 @@ html {
 .dropdown:hover .dropbtn {
     color: #ff9933;
 }
-/*This is for below the navigation bar*/
+
+/*This is for below the navigation bar for the title of the page*/
 a {
     position: relative;
     color: #ff9933;
@@ -138,7 +140,7 @@ a:hover {
     min-width: 640px;
     animation:animatebottom 0.4s} @keyframes animatebottom{from{bottom:-300px;opacity:0} to{bottom:0;opacity:1}}
 
-/*This is for the content on the home page*/
+/*This is for the content on the section blocks on the page where information is provided*/
 .container-content {
     padding: 64px;
 }
@@ -155,6 +157,7 @@ a:hover {
     padding: 20px;
 }
 
+/*mom gives the layout of the molecule of the month*/
 .mom {
     float: left;
     width: 25%;
@@ -183,12 +186,12 @@ a:hover {
 .mom img {
     position: relative;
 }
+
 .column-33 {
     float: left;
     width: 33.33333%;
     padding: 20px;
 }
-
 
 .large-font {
     font-size: 48px;
@@ -226,6 +229,7 @@ img {
     }
 }
 
+/*Contains the css of the footer at the bottom of every page*/
 .footer {
     background: Black;
     color: white;
@@ -259,13 +263,13 @@ img {
     border: 1px solid #ff9933;
 }
 
-/*Center the molecule*/
+/*Centers the molecule*/
 .center {
     width: 720px;
     margin: auto;
 }
 
+/*Class for the color of the text when the file input is incorrect*/
 .error {
     color: orangered;
 }
-

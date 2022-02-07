@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 @WebServlet(name = "HomeServlet", urlPatterns = "/home", loadOnStartup = 1)
 public class HomeServlet extends HttpServlet {
@@ -29,10 +30,6 @@ public class HomeServlet extends HttpServlet {
     }
     public void process(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        String[] monthName = {"January", "February",
-                "March", "April", "May", "June", "July",
-                "August", "September", "October", "November",
-                "December"};
 
         //this step is optional; standard settings also suffice
         WebConfig.configureResponse(response);
@@ -42,8 +39,10 @@ public class HomeServlet extends HttpServlet {
                 request.getServletContext(),
                 request.getLocale());
 
+        //Get the month name of the current date
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMMM");
         String month = simpleDateFormat.format(new Date());
+        //Set the month as variable to use in html
         ctx.setVariable("month", month);
         WebConfig.createTemplateEngine(getServletContext()).
                 process("home", ctx, response.getWriter());

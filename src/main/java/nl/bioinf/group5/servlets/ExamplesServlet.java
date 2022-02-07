@@ -36,6 +36,7 @@ public class ExamplesServlet extends HttpServlet {
 
         String molecule = request.getParameter("molecule");
 
+        //Checks if the url equals the name of the molecule and redirect it to the page
         if (molecule.equals("1igt")) {
             WebConfig.createTemplateEngine(getServletContext()).
                     process("1igt", ctx, response.getWriter());

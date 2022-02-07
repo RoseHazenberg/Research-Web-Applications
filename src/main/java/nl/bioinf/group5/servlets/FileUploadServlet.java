@@ -34,11 +34,14 @@ public class FileUploadServlet extends HttpServlet {
         String outputFolder = getInitParameter("upload");
         Files.createDirectories(Paths.get(outputFolder));
         File fileSaveDir = new File(outputFolder);
+
+        //Checks if the file directory exists and creates it otherwise
         if (!fileSaveDir.exists()) {
             fileSaveDir.mkdir();
             throw new IllegalStateException("Upload dir does not exist: " + outputFolder);
         }
 
+        //Get the session id
         HttpSession session = request.getSession(true);
         String sessionId = session.getId();
 
@@ -61,11 +64,13 @@ public class FileUploadServlet extends HttpServlet {
         String nextPage;
 
         System.out.println("fileName = " + fileName);
+        //Checks if the filename ends with .pdb and return an error otherwise
         if (!fileName.endsWith("pdb")) {
             ctx.setVariable("message", "The file provided is not a pdb file; please try again");
             ctx.setVariable("message_type", "error");
             nextPage = "input";
         } else {
+            //No error so it sends the user to the next page where the atom is shown
             ctx.setVariable("filename", fileName.replace(".pdb", ""));
             nextPage = "atom";
         }
