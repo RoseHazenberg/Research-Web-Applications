@@ -5,7 +5,7 @@ This project is a part of theme 10, Research Web-Applications of the study Bioin
 
 
 ### Requirements
-* A Leap Motion 
+* A Leap Motion Controller
 * Download *[Leap Motion software](https://www.techspot.com/downloads/6701-leap-motion.html)*
 * Run the downloaded application
 * And to fully connect the leap motion, follow the next steps in the video *[leap motion](https://www.youtube.com/watch?v=KlZc9MR13wM&t=114s)* `[1:14  ~ 2:05]`  
@@ -13,7 +13,7 @@ This project is a part of theme 10, Research Web-Applications of the study Bioin
 * Java 17.0.1 
 * Tomcat 9.0.55 or *[Tomcat 9.0.58](https://tomcat.apache.org/)*
 
-###Installation
+### Installation
 * Clone this project for own use
 * Edit the paths in `web.xml` located in `/src/main/webapp/WEB-INF/web.xml` and make sure you have a `/tmp` directory like the paths in `web.xml`
 * Build the `build.gradle`, this is also done automated after the project is loaded into Intellij
@@ -21,7 +21,7 @@ This project is a part of theme 10, Research Web-Applications of the study Bioin
 * Note the Warning: no artifacts marked for deployment. Click `Fix` and select `/Gradle___nl_bioinf_group5___Research_Web_Applications_1_0_SNAPSHOT_war` and fill in `/` instead of `/Gradle___nl_bioinf_group5___Research_Web_Applications_1_0_SNAPSHOT_war`  
 For help please visit *[JetBrains](https://www.jetbrains.com/help/idea/run-debug-configuration-tomcat-server.html)*
 
-###Usage
+### Usage
 * Run Tomcat which brings you to `http://localhost:8080/home` and have a look at the website
 * Plug the leap motion in
 * Under `input` choose a pdb file of your choice or visit the `examples`
