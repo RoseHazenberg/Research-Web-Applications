@@ -9,7 +9,7 @@ output:
       keep_tex: yes
 title: "Molecular Interaction\\vspace{0.5cm}"
 subtitle: "Analysis of breast cancer and stage prediction using machine learning\\vspace{1in}"
-author: "\\includegraphics{Research-Web-Applications/src/main/webapp/images/protein-pdb.png}"
+author: 
 date: "Image of fine needle aspiration of breast cancer cells\\cite{research}"
 
 linkcolor: blue
@@ -18,7 +18,7 @@ linkcolor: blue
 \mbox{}
 \begin{flushright}
 Akastia Christo and Rose Hazenberg\linebreak
-300000 and 407050\linebreak
+390250 and 407050\linebreak
 BFV3\linebreak
 `r Sys.Date()` \linebreak
 Marcel Kempenaar\linebreak 
@@ -39,7 +39,7 @@ Analysis of breast cancer and stage prediction using machine learning
 \mbox{}
 \begin{flushright}
 Akastia Christo and Rose Hazenberg\linebreak
-300000 and 407050\linebreak
+390250 and 407050\linebreak
 Bioinformatics\linebreak
 Life Science and Technology\linebreak
 Marcel Kempenaar\linebreak 
@@ -49,7 +49,18 @@ Marcel Kempenaar\linebreak
 \newpage
 \addcontentsline{toc}{section}{Summary}
 \section*{Summary}
-ghjkb
+For this semester, the project Molecular Interaction has been chosen. We choose this project to make a user-friendly website and a fun way to interact with biological concepts like molecules. This project aims to create an interactive model that gets students more involved for an open day and get them to know about the study Bio-Informatics and learn about what we do in this study. This project aims to build an interface combining visualisation and interaction and make it user-friendly during the open day of the study Bio-Informatics.  
+
+The tools and methods going to be used to achieve the project goals are JSmol \cite{jsmol} with a PDB file to make a molecule on the website. With the Tomcat server, the Java web application has been made. An essential tool that has been used is the leap motion device, which will recognise the hand movements and can be used to interact with the molecule. The leap motion needs an SDK to use the leap motion as a developer in the IntelliJ IDEA Java software\cite{Java} and the tracking software to see the hand movements and the use of the leap motion on the desktop.\cite{leap_motion_download} 
+
+The website shows a home page with navigation to go to the home page, upload a file, examples of a few molecules, the molecule and contact page and the link to GitHub. 
+The homepage shows information about the molecular interaction, leap motion that has been used to track the hand with gestures, JSmol to create a molecule that moves and about us and the molecule of the month.
+
+The input page gives a purpose to upload a PDB file which goes to the page that input the file in the JSmol, which creates the molecules. The leap motion is then connected to the JSmol, which can then move the molecule, that has been uploaded in the page, to be able to recognise the hand gesture in the website with the molecular interaction. The molecule recognises the following gestures; swiping the hand over the leap motion device enables the spin function on the JSmol on the website. The molecule can be rotated wit the gestures in the x-axis with right-hand roll control, y-axis with both hands, pointing upwards as if grasping a cube and rotating it and z-axis with left-hand roll control. To control the zoom pitch, the hand upwards to zoom in and the hand downwards to zoom out. The circle with one finger reset the zoom level to normal. 
+The contact page shows the links to our emails for a question and a link to our GitHub.
+And in each page, there is a footer that shows useful links that redirects to the pages. With the Hanze University of Life Sciences logo, it redirects to the Hanze University page of the study Bioinformatics.
+
+The website will be used in the future for open days to give upcoming students a good view of the Bioinformatics of Hanze University. This website could be improved in the future by making more gestures that the leap motion recognises and that the leap motion could be used as a mouse so that the website is not dependent on the mouse, so the website is fully interactive.
 
 \newpage
 \addcontentsline{toc}{section}{Abbreviations and symbols}
@@ -129,6 +140,7 @@ TechSpot Inc, Leap Motion 2.3.1, techspot: \textit{leap motion download}, Leap M
 
 \bibitem{video}
 Youtube, [Leap Motion]-Controller is off(How to fix): \textit{leap motion video}, minutes 1:14  ~ 2:05
+
 
 
 
