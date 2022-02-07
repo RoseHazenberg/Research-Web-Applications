@@ -1,0 +1,141 @@
+---
+header-includes:
+   - \usepackage{hyperref}
+   - \usepackage{float}
+output:
+    pdf_document:
+      number_sections: yes
+      toc: no
+      keep_tex: yes
+title: "Molecular Interaction\\vspace{0.5cm}"
+subtitle: "Analysis of breast cancer and stage prediction using machine learning\\vspace{1in}"
+author: "\\includegraphics{Research-Web-Applications/src/main/webapp/images/protein-pdb.png}"
+date: "Image of fine needle aspiration of breast cancer cells\\cite{research}"
+
+linkcolor: blue
+---
+\vfill
+\mbox{}
+\begin{flushright}
+Akastia Christo and Rose Hazenberg\linebreak
+300000 and 407050\linebreak
+BFV3\linebreak
+`r Sys.Date()` \linebreak
+Marcel Kempenaar\linebreak 
+\end{flushright}
+\pagenumbering{gobble}
+
+\newpage
+\mbox{}
+\pagenumbering{gobble}
+
+\newpage
+\begin{center}
+{\LARGE Molecular Interaction\linebreak}
+Analysis of breast cancer and stage prediction using machine learning
+\end{center}
+
+\vfill
+\mbox{}
+\begin{flushright}
+Akastia Christo and Rose Hazenberg\linebreak
+300000 and 407050\linebreak
+Bioinformatics\linebreak
+Life Science and Technology\linebreak
+Marcel Kempenaar\linebreak 
+`r Sys.Date()` \linebreak
+\end{flushright}
+
+\newpage
+\addcontentsline{toc}{section}{Summary}
+\section*{Summary}
+ghjkb
+
+\newpage
+\addcontentsline{toc}{section}{Abbreviations and symbols}
+\section*{Abbreviations and symbols}
+
+Abbreviations                               |Symbols
+--------------------------------------------|----
+Hypertext Markup Language                   |HTML
+Cascading Style Sheets                      |CSS
+Software Development Kit                    |SDK
+Java Development Kit                        |JDK
+Protein Data Bank                           |pdb
+
+
+\newpage
+\mbox{}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{6}
+
+\newpage
+# Materials & Methods
+
+## Materials 
+
+To design the website there were multiple web development languages used, which consist mainly of the languages HTML, CSS, Java, and Javascript. With the use of IntelliJ IDEA 2021.2.4 (Ultimate Edition)\cite{intellij}, which is an integrated development environment written in Java for developing computer software and provides the languages that were used to design the website.\cite{intellij_description} It can also be used with a lower version of IntelliJ but it prefers the latest version. IntelliJ supports Java, here was Java 17.0.1 2021-10-19 LTS used. Besides Java, it needs to have a Software Development Kit (SDK), which is a set of software or development tools used to create an application or program on any platform. For the global SDK was the Java Development Kit (JDK) 17.0.1 used.\cite{JDK} And for the project SDK is version 16.0.2 used. To use IntelliJ is also needed Java. For this project was Java Version 8 Update 311 used.\cite{Java} This was all needed to write the code for the website. After the code was created with the help of Thymeleaf in the HTML pages, the website had to be executed and shown in a web browser. This was done with the help of Apache Tomcat 9.0.55.\cite{tomcat} Tomcat provides a "pure Java" HTTP web server environment in which Java code can run.\cite{tomcat_description} On the website there is an interaction with molecules available. These molecules were created with the help of JSmol. JSmol is the HTML5 modality of Jmol, able to be embedded into web pages, and is an interactive web browser object.\cite{jsmol} For the JSmol was Jmol-14.32.1-binary.zip downloaded.\cite{jsmol_download} For this website are the needed files of JSmol provided in the repository, see appendix. A molecule was created from a .pdb file which can be downloaded from the website RCSB PDB.\cite{pdb}
+To interact with these molecules by using your hands only, is there a device needed called Leap Motion. Leap Motion is a small device that enables you to use your hands' motions to control your computer in an alternative and novel way with the help of its advanced motion sensors. The Leap Motion needs a small app to connect a Leap Motion controller to the computer and translate the movement of the hands into computer interactions. Leap Motion version 2.3.1 was downloaded from TechSpot.\cite{leap_motion_download} 
+
+## Methods 
+
+Everything is done in IntelliJ IDEA 2021.2.1 (Ultimate). In IntelliJ, a new Gradle project was created with the libraries Java and Web. In the build.gradle where the dependencies for Thymeleaf and servlets were defined. Under the web-app was a folder called WEB-INF create and within this folder is a folder called templates, here are the html pages and the properties stored. To start the basics of the project there was an HTML page in Thymeleaf, Servlet and WebConfig created. For the HTML page was also a resource bundle created to support multiple languages for the website. The WebConfig is a java class that provides a template engine and is responsible for processing Thymeleaf templates into html views. A Servlet is also a Java class that is used for the server-side. These Java classes are stored with the main/java package. 
+For the html pages are properties used which are stored in the resource bundle to support multiple languages, in this case, Dutch and English. After a simple website, it needs to run view the create website. To run it a new run configuration was created by `add configuration`. Here is Tomcat Server/Local used, the URL address is based on the URL defined in the Servlet. At the bottom, the warning was fixed by selecting the Gradle war artifact and replacing this with only a `/`. To use Tomcat it needed to be downloaded first and make all of the *.sh scripts in the bin folder executable. The whole project contains CSS for the style of the website, data which contains the .pdb files for the molecules, images for the website, javascript for both the JSmol and Leap Motion, HTML, resource bundle, and xml files. The project only needed one file and a folder from the downloaded JSmol folder, these are provided also in the repository, see appendix. Besides the JSmol is the leap motion software needed. To fully connect the leap motion follow the leap motion video.\cite{video} After every page, configuration, and server was fully created, was the leap motion plugged in the computer. With the help of the leap motion can be an interaction created with the molecules which are generated with JSmol from .pdb file. So by using the hands' movements can the molecule rotate, spin, and zoom. 
+
+For more information, all of the code, and example data is available in the repository at  
+https://github.com/RoseHazenberg/Research-Web-Applications
+
+In the README.md in the repository is every step explained to clone and use this project.
+
+\newpage
+
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{12}
+
+\bibitem{intellij}
+IntelliJ IDEA: \textit{Download IntelliJ}, Download IntelliJ IDEA, Retrieved from https://www.jetbrains.com/idea/download/ on 06-02-2022
+
+\bibitem{intellij_description}
+IntelliJ IDEA: \textit{IntelliJ description}, IntelliJ IDEA, Wikipedia, Retrieved from https://en.wikipedia.org/wiki/IntelliJ on 06-02-2022
+
+\bibitem{Java}
+Java, Oracle: \textit{Download Java}, Download Java, Retrieved from https://www.java.com/nl/download/ on 07-02-2022
+
+\bibitem{JDK}
+Java SE Development Kit 17.0.1: \textit{Download JDK}, Java SE 17 Archive Downloads, Retrieved from https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html on 07-02-2022
+
+\bibitem{tomcat}
+The Apache Software Foundation 2021: \textit{Download IntelliJ}, Download Apache Tomcat, Retrieved from https://tomcat.apache.org/index.html on 07-02-2022
+
+\bibitem{tomcat_description}
+Apache Tomcat: \textit{Tomcat description}, Apache Tomcat Wikipedia, Retrieved from https://en.wikipedia.org/ on 07-02-2022
+
+\bibitem{jsmol}
+Source Forge, Jmol an open-source Java viewer for chemical structures in 3D: \textit{JSmol overview}, Jmol/JSmol overview, Retrieved from
+http://jmol.sourceforge.net/ on 07-02-2022
+
+
+\bibitem{pdb}
+RCSB PDB, RCSB Protein Data Bank: \textit{pdb downloads}, protein data bank, Retrieved from https://www.rcsb.org/ on 07-02-2022
+
+\bibitem{jsmol_download}
+Source Forge, Jmol: \textit{JSmol download}, Jmol/JSmol download, Retrieved from https://sourceforge.net/projects/jmol/files/Jmol/ on 07-02-2022
+
+\bibitem{leap_motion_download}
+TechSpot Inc, Leap Motion 2.3.1, techspot: \textit{leap motion download}, Leap Motion, Retrieved from https://www.techspot.com/downloads/6701-leap-motion.html on 07-02-2022
+
+\bibitem{video}
+Youtube, [Leap Motion]-Controller is off(How to fix): \textit{leap motion video}, minutes 1:14  ~ 2:05
+
+
+
+\end{thebibliography}
+
+\newpage
+\addcontentsline{toc}{section}{Appendix}
+\section*{Appendix}
+
+https://github.com/RoseHazenberg/Research-Web-Applications
