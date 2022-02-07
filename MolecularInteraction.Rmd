@@ -8,9 +8,9 @@ output:
       toc: no
       keep_tex: yes
 title: "Molecular Interaction\\vspace{0.5cm}"
-subtitle: "Analysis of breast cancer and stage prediction using machine learning\\vspace{1in}"
-author: 
-date: "Image of fine needle aspiration of breast cancer cells\\cite{research}"
+subtitle: "Interact with molecules with only using your hands\\vspace{1in}"
+author: "\\includegraphics{src/main/webapp/images/protein-pdb.png}"
+date: "Image of molecule Heme A\\cite{molecule}"
 
 linkcolor: blue
 ---
@@ -32,7 +32,7 @@ Marcel Kempenaar\linebreak
 \newpage
 \begin{center}
 {\LARGE Molecular Interaction\linebreak}
-Analysis of breast cancer and stage prediction using machine learning
+Interact with molecules with only using your hands
 \end{center}
 
 \vfill
@@ -49,16 +49,16 @@ Marcel Kempenaar\linebreak
 \newpage
 \addcontentsline{toc}{section}{Summary}
 \section*{Summary}
-For this semester, the project Molecular Interaction has been chosen. We choose this project to make a user-friendly website and a fun way to interact with biological concepts like molecules. This project aims to create an interactive model that gets students more involved for an open day and get them to know about the study Bio-Informatics and learn about what we do in this study. This project aims to build an interface combining visualisation and interaction and make it user-friendly during the open day of the study Bio-Informatics.  
+For this semester, the project Molecular Interaction has been chosen. We choose this project to make a user-friendly website and a fun way to interact with biological concepts like molecules. This project aims to create an interactive model that gets students more involved for an open day and get them to know about the study Bioinformatics and learn about what we do in this study. This project aims to build an interface combining visualisation and interaction and make it user-friendly during the open day of the study Bioinformatics.  
 
-The tools and methods going to be used to achieve the project goals are JSmol \cite{jsmol} with a PDB file to make a molecule on the website. With the Tomcat server, the Java web application has been made. An essential tool that has been used is the leap motion device, which will recognise the hand movements and can be used to interact with the molecule. The leap motion needs an SDK to use the leap motion as a developer in the IntelliJ IDEA Java software\cite{Java} and the tracking software to see the hand movements and the use of the leap motion on the desktop.\cite{leap_motion_download} 
+The tools and methods going to be used to achieve the project goals are JSmol \cite{jsmol} with a PDB file to make a molecule on the website. With the Tomcat server, the Java web application has been made. An essential tool that has been used is the leap motion device, which will recognise the hand movements and can be used to interact with the molecule. The leap motion needs a Software Development Kit (SDK) to use the leap motion as a developer in the IntelliJ IDEA Java software\cite{Java} and the tracking software to see the hand movements and the use of the leap motion on the desktop.\cite{leap_motion_download} 
 
-The website shows a home page with navigation to go to the home page, upload a file, examples of a few molecules, the molecule and contact page and the link to GitHub. 
-The homepage shows information about the molecular interaction, leap motion that has been used to track the hand with gestures, JSmol to create a molecule that moves and about us and the molecule of the month.
+The website shows a home page with navigation to go to the home page, upload a file, examples of a few molecules, the molecule, and contact page and the link to GitHub. 
+The homepage shows sections with information about the molecular interaction, leap motion that has been used to track the hand with gestures, JSmol to create a molecule that moves, and about us, and the molecule of the month.
 
-The input page gives a purpose to upload a PDB file which goes to the page that input the file in the JSmol, which creates the molecules. The leap motion is then connected to the JSmol, which can then move the molecule, that has been uploaded in the page, to be able to recognise the hand gesture in the website with the molecular interaction. The molecule recognises the following gestures; swiping the hand over the leap motion device enables the spin function on the JSmol on the website. The molecule can be rotated wit the gestures in the x-axis with right-hand roll control, y-axis with both hands, pointing upwards as if grasping a cube and rotating it and z-axis with left-hand roll control. To control the zoom pitch, the hand upwards to zoom in and the hand downwards to zoom out. The circle with one finger reset the zoom level to normal. 
+The input page gives a purpose to upload a Protein Data Bank (PDB) file which goes to the page that input the file in the JSmol, which creates the molecules. The leap motion is then connected to the JSmol which can recognise the hand gesture in the website with the molecular interaction to move the molecule that has been uploaded to the page. The molecule recognises the following gestures; swiping the hand over the leap motion device enables the spin function on the JSmol on the website. The molecule can be rotated with the gestures in the x-axis with right-hand roll control, y-axis with both hands, pointing upwards as if grasping a cube and rotating it and z-axis with left-hand roll control. To control the zoom pitch, the hand upwards to zoom in and the hand downwards to zoom out. The circle with one finger reset the zoom level to normal. 
 The contact page shows the links to our emails for a question and a link to our GitHub.
-And in each page, there is a footer that shows useful links that redirects to the pages. With the Hanze University of Life Sciences logo, it redirects to the Hanze University page of the study Bioinformatics.
+And in each page, there is a footer that shows useful links that redirect to the pages. With the Hanze University of Life Sciences logo, it redirects to the Hanze University page of the study Bioinformatics.
 
 The website will be used in the future for open days to give upcoming students a good view of the Bioinformatics of Hanze University. This website could be improved in the future by making more gestures that the leap motion recognises and that the leap motion could be used as a mouse so that the website is not dependent on the mouse, so the website is fully interactive.
 
@@ -72,7 +72,7 @@ Hypertext Markup Language                   |HTML
 Cascading Style Sheets                      |CSS
 Software Development Kit                    |SDK
 Java Development Kit                        |JDK
-Protein Data Bank                           |pdb
+Protein Data Bank                           |PDB
 
 
 \newpage
@@ -88,13 +88,13 @@ Protein Data Bank                           |pdb
 
 ## Materials 
 
-To design the website there were multiple web development languages used, which consist mainly of the languages HTML, CSS, Java, and Javascript. With the use of IntelliJ IDEA 2021.2.4 (Ultimate Edition)\cite{intellij}, which is an integrated development environment written in Java for developing computer software and provides the languages that were used to design the website.\cite{intellij_description} It can also be used with a lower version of IntelliJ but it prefers the latest version. IntelliJ supports Java, here was Java 17.0.1 2021-10-19 LTS used. Besides Java, it needs to have a Software Development Kit (SDK), which is a set of software or development tools used to create an application or program on any platform. For the global SDK was the Java Development Kit (JDK) 17.0.1 used.\cite{JDK} And for the project SDK is version 16.0.2 used. To use IntelliJ is also needed Java. For this project was Java Version 8 Update 311 used.\cite{Java} This was all needed to write the code for the website. After the code was created with the help of Thymeleaf in the HTML pages, the website had to be executed and shown in a web browser. This was done with the help of Apache Tomcat 9.0.55.\cite{tomcat} Tomcat provides a "pure Java" HTTP web server environment in which Java code can run.\cite{tomcat_description} On the website there is an interaction with molecules available. These molecules were created with the help of JSmol. JSmol is the HTML5 modality of Jmol, able to be embedded into web pages, and is an interactive web browser object.\cite{jsmol} For the JSmol was Jmol-14.32.1-binary.zip downloaded.\cite{jsmol_download} For this website are the needed files of JSmol provided in the repository, see appendix. A molecule was created from a .pdb file which can be downloaded from the website RCSB PDB.\cite{pdb}
+To design the website there were multiple web development languages used, which consist mainly of the languages HTML, CSS, Java, and Javascript. With the use of IntelliJ IDEA 2021.2.4 (Ultimate Edition)\cite{intellij}, which is an integrated development environment written in Java for developing computer software and provides the languages that were used to design the website.\cite{intellij_description} It can also be used with a lower version of IntelliJ but it prefers the latest version. IntelliJ supports Java, here was Java 17.0.1 2021-10-19 LTS used. Besides Java, it needs to have a SDK, which is a set of software or development tools used to create an application or program on any platform. For the global SDK was the Java Development Kit (JDK) 17.0.1 used.\cite{JDK} And for the project SDK is version 16.0.2 used. To use IntelliJ is also needed Java. For this project was Java Version 8 Update 311 used.\cite{Java} This was all needed to write the code for the website. After the code was created with the help of Thymeleaf in the HTML pages, the website had to be executed and shown in a web browser. This was done with the help of Apache Tomcat 9.0.55.\cite{tomcat} Tomcat provides a "pure Java" HTTP web server environment in which Java code can run.\cite{tomcat_description} On the website there is an interaction with molecules available. These molecules were created with the help of JSmol. JSmol is the HTML5 modality of Jmol, able to be embedded into web pages, and is an interactive web browser object.\cite{jsmol} For the JSmol was Jmol-14.32.1-binary.zip downloaded.\cite{jsmol_download} For this website are the needed files of JSmol provided in the repository, see appendix. A molecule was created from a PDB file which can be downloaded from the website RCSB PDB.\cite{pdb}
 To interact with these molecules by using your hands only, is there a device needed called Leap Motion. Leap Motion is a small device that enables you to use your hands' motions to control your computer in an alternative and novel way with the help of its advanced motion sensors. The Leap Motion needs a small app to connect a Leap Motion controller to the computer and translate the movement of the hands into computer interactions. Leap Motion version 2.3.1 was downloaded from TechSpot.\cite{leap_motion_download} 
 
 ## Methods 
 
 Everything is done in IntelliJ IDEA 2021.2.1 (Ultimate). In IntelliJ, a new Gradle project was created with the libraries Java and Web. In the build.gradle where the dependencies for Thymeleaf and servlets were defined. Under the web-app was a folder called WEB-INF create and within this folder is a folder called templates, here are the html pages and the properties stored. To start the basics of the project there was an HTML page in Thymeleaf, Servlet and WebConfig created. For the HTML page was also a resource bundle created to support multiple languages for the website. The WebConfig is a java class that provides a template engine and is responsible for processing Thymeleaf templates into html views. A Servlet is also a Java class that is used for the server-side. These Java classes are stored with the main/java package. 
-For the html pages are properties used which are stored in the resource bundle to support multiple languages, in this case, Dutch and English. After a simple website, it needs to run view the create website. To run it a new run configuration was created by `add configuration`. Here is Tomcat Server/Local used, the URL address is based on the URL defined in the Servlet. At the bottom, the warning was fixed by selecting the Gradle war artifact and replacing this with only a `/`. To use Tomcat it needed to be downloaded first and make all of the *.sh scripts in the bin folder executable. The whole project contains CSS for the style of the website, data which contains the .pdb files for the molecules, images for the website, javascript for both the JSmol and Leap Motion, HTML, resource bundle, and xml files. The project only needed one file and a folder from the downloaded JSmol folder, these are provided also in the repository, see appendix. Besides the JSmol is the leap motion software needed. To fully connect the leap motion follow the leap motion video.\cite{video} After every page, configuration, and server was fully created, was the leap motion plugged in the computer. With the help of the leap motion can be an interaction created with the molecules which are generated with JSmol from .pdb file. So by using the hands' movements can the molecule rotate, spin, and zoom. 
+For the html pages are properties used which are stored in the resource bundle to support multiple languages, in this case, Dutch and English. After a simple website, it needs to run view the create website. To run it a new run configuration was created by `add configuration`. Here is Tomcat Server/Local used, the URL address is based on the URL defined in the Servlet. At the bottom, the warning was fixed by selecting the Gradle war artifact and replacing this with only a `/`. To use Tomcat it needed to be downloaded first and make all of the *.sh scripts in the bin folder executable. The whole project contains CSS for the style of the website, data which contains the PDB files for the molecules, images for the website, javascript for both the JSmol and Leap Motion, HTML, resource bundle, and xml files. The project only needed one file and a folder from the downloaded JSmol folder, these are provided also in the repository, see appendix. Besides the JSmol is the leap motion software needed. To fully connect the leap motion follow the leap motion video.\cite{video} After every page, configuration, and server was fully created, was the leap motion plugged in the computer. With the help of the leap motion can be an interaction created with the molecules which are generated with JSmol from PDB file. So by using the hands' movements can the molecule rotate, spin, and zoom. 
 
 For more information, all of the code, and example data is available in the repository at  
 https://github.com/RoseHazenberg/Research-Web-Applications
@@ -105,6 +105,9 @@ In the README.md in the repository is every step explained to clone and use this
 
 \addcontentsline{toc}{section}{References}
 \begin{thebibliography}{12}
+
+\bibitem{molecule}
+Wikiwand Heme A: \textit{molecule image}, Heme A, Retrieved from https://www.wikiwand.com/en/ on 07-02-2022
 
 \bibitem{intellij}
 IntelliJ IDEA: \textit{Download IntelliJ}, Download IntelliJ IDEA, Retrieved from https://www.jetbrains.com/idea/download/ on 06-02-2022
@@ -140,9 +143,6 @@ TechSpot Inc, Leap Motion 2.3.1, techspot: \textit{leap motion download}, Leap M
 
 \bibitem{video}
 Youtube, [Leap Motion]-Controller is off(How to fix): \textit{leap motion video}, minutes 1:14  ~ 2:05
-
-
-
 
 \end{thebibliography}
 
