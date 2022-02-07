@@ -1,3 +1,5 @@
+/*This CSS contains the style of the links of the contact page and stands alone from the other CSS
+  otherwise, it conflicts with the jsmol links when clicked on the right mouse*/
 ul {
     position:relative;
     top:140%;
@@ -126,32 +128,3 @@ ul li:hover:nth-child(4) a:before{
 ul li:hover:nth-child(4) a:after{
     background: #e46880;
 }
-
-/*@media screen and (max-width: 480px) {*/
-/*    .column-66,*/
-/*    .mom,*/
-/*    .column-33 {*/
-/*        width: 100%;*/
-/*        text-align: center;*/
-/*    }*/
-
-/*    img {*/
-/*        margin: auto;*/
-/*    }*/
-
-/*    ul li a {*/
-/*        left: 0;*/
-/*    }*/
-
-/*    ul li a:before{*/
-/*        left: 0;*/
-/*    }*/
-
-/*    ul li a:after {*/
-/*        left: 0;*/
-/*    }*/
-
-/*    ul li a:hover {*/
-/*        left: 0;*/
-/*    }*/
-/*}*/

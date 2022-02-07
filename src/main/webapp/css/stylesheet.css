@@ -265,8 +265,7 @@ img {
 
 /*Centers the molecule*/
 .center {
-    width: 720px;
-    margin: auto;
+    width: 300px;
 }
 
 /*Class for the color of the text when the file input is incorrect*/
