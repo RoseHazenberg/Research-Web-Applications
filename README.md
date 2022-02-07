@@ -42,6 +42,7 @@ For help please visit *[JetBrains](https://www.jetbrains.com/help/idea/run-debug
     
 ### Acknowledgment
 We would like to thank Marcel Kempenaar for helping us to connect the leap motion and for making the javascript that contains the hand gestures to interact with a molecule.
+And we would also like to thank Michiel Noback for helping us understand how to make a web application and for helping us make the file upload.
 
 ### Authors & Support
 Akastia Christo and Rose Hazenberg  
