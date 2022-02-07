@@ -47,4 +47,4 @@ And we would also like to thank Michiel Noback for helping us understand how to 
 ### Authors & Support
 Akastia Christo and Rose Hazenberg  
 Bioinformatics at Hanze University of Applied Science  
-For help or questions you can email to: m.a.christo@st.hanze.nl or c.r.hazenberg@.st.hanze.nl
+For help or questions you can email to: m.a.christo@st.hanze.nl or c.r.hazenberg@st.hanze.nl
