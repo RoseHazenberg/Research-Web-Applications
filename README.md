@@ -39,6 +39,8 @@ For help please visit *[JetBrains](https://www.jetbrains.com/help/idea/run-debug
     * Z-axis: left-hand roll control
   - Zoom
     * Pitch controlled for both hands (but only one at a time)
+
+These gestures are also explained in the image `hand_gestures.png` located at `/src/main/webapp/images/hand_gestures.png`
     
 ### Acknowledgment
 We would like to thank Marcel Kempenaar for helping us to connect the leap motion and for making the javascript that contains the hand gestures to interact with a molecule.
